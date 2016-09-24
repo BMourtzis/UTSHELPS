@@ -20,6 +20,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.gianni.sdpprototype.Fragments.AboutFragment;
+import com.example.gianni.sdpprototype.Fragments.AccountFragment;
+import com.example.gianni.sdpprototype.Fragments.BookingsFragment;
+import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
+import com.example.gianni.sdpprototype.Fragments.HistoryFragment;
+import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
+import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private NfcAdapter mNfcAdapter;
@@ -34,19 +42,9 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.title_landing);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Your session for 'Understanding Turnitin' starts at 2pm today", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -104,7 +102,7 @@ public class MainActivity extends AppCompatActivity
             parentID += (char) payload[temp];
         }
         Toast.makeText(getApplicationContext(), parentID, Toast.LENGTH_SHORT).show();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendance()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendanceFragment()).commit();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -114,20 +112,29 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
 
-        if (id == R.id.nav_bookings) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Bookings()).commit();
-        } else if (id == R.id.nav_upcoming_sessions) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new UpcomingSessions()).commit();
-        } else if (id == R.id.nav_reminders) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Reminders()).commit();
-        } else if (id == R.id.nav_history) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new History()).commit();
-        } else if (id == R.id.nav_account) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Account()).commit();
-        } else if (id == R.id.nav_about) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new About()).commit();
-        } else if (id == R.id.nav_check_attendance) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendance()).commit();
+        switch (id)
+        {
+            case R.id.nav_bookings:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new BookingsFragment()).commit();
+                break;
+            case R.id.nav_upcoming_sessions:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new UpcomingSessionsFragment()).commit();
+                break;
+            case R.id.nav_reminders:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new RemindersFragment()).commit();
+                break;
+            case R.id.nav_history:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new HistoryFragment()).commit();
+                break;
+            case R.id.nav_account:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new AccountFragment()).commit();
+                break;
+            case R.id.nav_about:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new AboutFragment()).commit();
+                break;
+            case R.id.nav_check_attendance:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendanceFragment()).commit();
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

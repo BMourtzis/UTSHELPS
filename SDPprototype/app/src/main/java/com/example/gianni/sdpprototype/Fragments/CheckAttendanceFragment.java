@@ -1,4 +1,4 @@
-package com.example.gianni.sdpprototype;
+package com.example.gianni.sdpprototype.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -9,10 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.gianni.sdpprototype.R;
+
 /**
  * Created by Gianni on 7/09/2016.
  */
-public class CheckAttendance extends Fragment {
+public class CheckAttendanceFragment extends Fragment {
 
     View checkAttendance;
     Button button;

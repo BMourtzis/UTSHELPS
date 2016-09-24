@@ -1,4 +1,4 @@
-package com.example.gianni.sdpprototype;
+package com.example.gianni.sdpprototype.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,19 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.gianni.sdpprototype.R;
+
 /**
  * Created by Gianni on 7/09/2016.
  */
-public class Bookings extends Fragment {
+public class HistoryFragment extends Fragment {
 
-    View bookingsView;
+    View historyView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        bookingsView = inflater.inflate(R.layout.bookings, container, false);
+        historyView = inflater.inflate(R.layout.history, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_bookings);
-        return bookingsView;
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_history);
+        return historyView;
     }
 }

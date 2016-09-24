@@ -1,4 +1,4 @@
-package com.example.gianni.sdpprototype;
+package com.example.gianni.sdpprototype.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,19 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.gianni.sdpprototype.R;
+
 /**
  * Created by Gianni on 7/09/2016.
  */
-public class Reminders extends Fragment {
+public class BookingsFragment extends Fragment {
 
-    View remindersView;
+    View bookingsView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        remindersView = inflater.inflate(R.layout.reminders, container, false);
+        bookingsView = inflater.inflate(R.layout.bookings, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_reminders);
-        return remindersView;
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_bookings);
+        return bookingsView;
     }
 }
