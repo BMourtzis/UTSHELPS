@@ -1,41 +1,69 @@
 package com.example.gianni.sdpprototype.Models;
 
+import com.orm.SugarRecord;
+import com.orm.dsl.Ignore;
+import com.orm.dsl.Table;
+
 /**
  * Created by Vasil on 24/9/2016.
  */
 
 
-public class Student
+@Table
+public class Student extends SugarRecord
 {
     private String studentID;
-    private Object dob;
+    private String dob;
     private String gender;
     private String degree;
     private String status;
     private String first_language;
     private String country_origin;
-    private Object background;
-    private Object HSC;
-    private Object hSCMark;
-    private Object iELTS;
-    private Object iELTSMark;
-    private Object tOEFL;
-    private Object tOEFLMark;
-    private Object tAFE;
-    private Object tAFEMark;
-    private Object cULT;
-    private Object cULTMark;
-    private Object insearchDEEP;
-    private Object insearchDEEPMark;
-    private Object insearchDiploma;
-    private Object insearchDiplomaMark;
-    private Object foundationcourse;
-    private Object foundationcourseMark;
+    private String background;
+    @Ignore
+    private boolean HSC;
+    @Ignore
+    private String hSCMark;
+    @Ignore
+    private boolean iELTS;
+    @Ignore
+    private String iELTSMark;
+    @Ignore
+    private boolean tOEFL;
+    @Ignore
+    private String tOEFLMark;
+    @Ignore
+    private boolean tAFE;
+    @Ignore
+    private String tAFEMark;
+    @Ignore
+    private boolean cULT;
+    @Ignore
+    private String cULTMark;
+    @Ignore
+    private boolean insearchDEEP;
+    @Ignore
+    private String insearchDEEPMark;
+    @Ignore
+    private boolean insearchDiploma;
+    @Ignore
+    private String insearchDiplomaMark;
+    @Ignore
+    private boolean foundationcourse;
+    @Ignore
+    private String foundationcourseMark;
+    @Ignore
     private String created;
+    @Ignore
     private Integer creatorID;
-    private Object degreeDetails;
-    private Object alternativeContact;
-    private Object preferredName;
+    private String degreeDetails;
+    private String alternativeContact;
+    private String preferredName;
+
+    /**
+     * Empty constructor, used by the ORM
+     */
+    public Student(){ }
 
     /**
      *
@@ -60,7 +88,7 @@ public class Student
      * @return
      * The dob
      */
-    public Object getDob() {
+    public String getDob() {
         return dob;
     }
 
@@ -69,7 +97,7 @@ public class Student
      * @param dob
      * The dob
      */
-    public void setDob(Object dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
@@ -168,7 +196,7 @@ public class Student
      * @return
      * The background
      */
-    public Object getBackground() {
+    public String getBackground() {
         return background;
     }
 
@@ -177,7 +205,7 @@ public class Student
      * @param background
      * The background
      */
-    public void setBackground(Object background) {
+    public void setBackground(String background) {
         this.background = background;
     }
 
@@ -186,7 +214,7 @@ public class Student
      * @return
      * The hSC
      */
-    public Object getHSC() {
+    public boolean getHSC() {
         return HSC;
     }
 
@@ -195,7 +223,7 @@ public class Student
      * @param hSC
      * The HSC
      */
-    public void setHSC(Object hSC) {
+    public void setHSC(boolean hSC) {
         this.HSC = hSC;
     }
 
@@ -204,7 +232,7 @@ public class Student
      * @return
      * The hSCMark
      */
-    public Object getHSCMark() {
+    public String getHSCMark() {
         return hSCMark;
     }
 
@@ -213,7 +241,7 @@ public class Student
      * @param hSCMark
      * The HSC_mark
      */
-    public void setHSCMark(Object hSCMark) {
+    public void setHSCMark(String hSCMark) {
         this.hSCMark = hSCMark;
     }
 
@@ -222,7 +250,7 @@ public class Student
      * @return
      * The iELTS
      */
-    public Object getIELTS() {
+    public boolean getIELTS() {
         return iELTS;
     }
 
@@ -231,7 +259,7 @@ public class Student
      * @param iELTS
      * The IELTS
      */
-    public void setIELTS(Object iELTS) {
+    public void setIELTS(boolean iELTS) {
         this.iELTS = iELTS;
     }
 
@@ -240,7 +268,7 @@ public class Student
      * @return
      * The iELTSMark
      */
-    public Object getIELTSMark() {
+    public String getIELTSMark() {
         return iELTSMark;
     }
 
@@ -249,7 +277,7 @@ public class Student
      * @param iELTSMark
      * The IELTS_mark
      */
-    public void setIELTSMark(Object iELTSMark) {
+    public void setIELTSMark(String iELTSMark) {
         this.iELTSMark = iELTSMark;
     }
 
@@ -258,7 +286,7 @@ public class Student
      * @return
      * The tOEFL
      */
-    public Object getTOEFL() {
+    public boolean getTOEFL() {
         return tOEFL;
     }
 
@@ -267,7 +295,7 @@ public class Student
      * @param tOEFL
      * The TOEFL
      */
-    public void setTOEFL(Object tOEFL) {
+    public void setTOEFL(boolean tOEFL) {
         this.tOEFL = tOEFL;
     }
 
@@ -276,7 +304,7 @@ public class Student
      * @return
      * The tOEFLMark
      */
-    public Object getTOEFLMark() {
+    public String getTOEFLMark() {
         return tOEFLMark;
     }
 
@@ -285,7 +313,7 @@ public class Student
      * @param tOEFLMark
      * The TOEFL_mark
      */
-    public void setTOEFLMark(Object tOEFLMark) {
+    public void setTOEFLMark(String tOEFLMark) {
         this.tOEFLMark = tOEFLMark;
     }
 
@@ -294,7 +322,7 @@ public class Student
      * @return
      * The tAFE
      */
-    public Object getTAFE() {
+    public boolean getTAFE() {
         return tAFE;
     }
 
@@ -303,7 +331,7 @@ public class Student
      * @param tAFE
      * The TAFE
      */
-    public void setTAFE(Object tAFE) {
+    public void setTAFE(boolean tAFE) {
         this.tAFE = tAFE;
     }
 
@@ -312,7 +340,7 @@ public class Student
      * @return
      * The tAFEMark
      */
-    public Object getTAFEMark() {
+    public String getTAFEMark() {
         return tAFEMark;
     }
 
@@ -321,7 +349,7 @@ public class Student
      * @param tAFEMark
      * The TAFE_mark
      */
-    public void setTAFEMark(Object tAFEMark) {
+    public void setTAFEMark(String tAFEMark) {
         this.tAFEMark = tAFEMark;
     }
 
@@ -330,7 +358,7 @@ public class Student
      * @return
      * The cULT
      */
-    public Object getCULT() {
+    public boolean getCULT() {
         return cULT;
     }
 
@@ -339,7 +367,7 @@ public class Student
      * @param cULT
      * The CULT
      */
-    public void setCULT(Object cULT) {
+    public void setCULT(boolean cULT) {
         this.cULT = cULT;
     }
 
@@ -348,7 +376,7 @@ public class Student
      * @return
      * The cULTMark
      */
-    public Object getCULTMark() {
+    public String getCULTMark() {
         return cULTMark;
     }
 
@@ -357,7 +385,7 @@ public class Student
      * @param cULTMark
      * The CULT_mark
      */
-    public void setCULTMark(Object cULTMark) {
+    public void setCULTMark(String cULTMark) {
         this.cULTMark = cULTMark;
     }
 
@@ -366,7 +394,7 @@ public class Student
      * @return
      * The insearchDEEP
      */
-    public Object getInsearchDEEP() {
+    public boolean getInsearchDEEP() {
         return insearchDEEP;
     }
 
@@ -375,7 +403,7 @@ public class Student
      * @param insearchDEEP
      * The InsearchDEEP
      */
-    public void setInsearchDEEP(Object insearchDEEP) {
+    public void setInsearchDEEP(boolean insearchDEEP) {
         this.insearchDEEP = insearchDEEP;
     }
 
@@ -384,7 +412,7 @@ public class Student
      * @return
      * The insearchDEEPMark
      */
-    public Object getInsearchDEEPMark() {
+    public String getInsearchDEEPMark() {
         return insearchDEEPMark;
     }
 
@@ -393,7 +421,7 @@ public class Student
      * @param insearchDEEPMark
      * The InsearchDEEP_mark
      */
-    public void setInsearchDEEPMark(Object insearchDEEPMark) {
+    public void setInsearchDEEPMark(String insearchDEEPMark) {
         this.insearchDEEPMark = insearchDEEPMark;
     }
 
@@ -402,7 +430,7 @@ public class Student
      * @return
      * The insearchDiploma
      */
-    public Object getInsearchDiploma() {
+    public boolean getInsearchDiploma() {
         return insearchDiploma;
     }
 
@@ -411,7 +439,7 @@ public class Student
      * @param insearchDiploma
      * The InsearchDiploma
      */
-    public void setInsearchDiploma(Object insearchDiploma) {
+    public void setInsearchDiploma(boolean insearchDiploma) {
         this.insearchDiploma = insearchDiploma;
     }
 
@@ -420,7 +448,7 @@ public class Student
      * @return
      * The insearchDiplomaMark
      */
-    public Object getInsearchDiplomaMark() {
+    public String getInsearchDiplomaMark() {
         return insearchDiplomaMark;
     }
 
@@ -429,7 +457,7 @@ public class Student
      * @param insearchDiplomaMark
      * The InsearchDiploma_mark
      */
-    public void setInsearchDiplomaMark(Object insearchDiplomaMark) {
+    public void setInsearchDiplomaMark(String insearchDiplomaMark) {
         this.insearchDiplomaMark = insearchDiplomaMark;
     }
 
@@ -438,7 +466,7 @@ public class Student
      * @return
      * The foundationcourse
      */
-    public Object getFoundationcourse() {
+    public boolean getFoundationcourse() {
         return foundationcourse;
     }
 
@@ -447,7 +475,7 @@ public class Student
      * @param foundationcourse
      * The foundationcourse
      */
-    public void setFoundationcourse(Object foundationcourse) {
+    public void setFoundationcourse(boolean foundationcourse) {
         this.foundationcourse = foundationcourse;
     }
 
@@ -456,7 +484,7 @@ public class Student
      * @return
      * The foundationcourseMark
      */
-    public Object getFoundationcourseMark() {
+    public String getFoundationcourseMark() {
         return foundationcourseMark;
     }
 
@@ -465,7 +493,7 @@ public class Student
      * @param foundationcourseMark
      * The foundationcourse_mark
      */
-    public void setFoundationcourseMark(Object foundationcourseMark) {
+    public void setFoundationcourseMark(String foundationcourseMark) {
         this.foundationcourseMark = foundationcourseMark;
     }
 
@@ -510,7 +538,7 @@ public class Student
      * @return
      * The degreeDetails
      */
-    public Object getDegreeDetails() {
+    public String getDegreeDetails() {
         return degreeDetails;
     }
 
@@ -519,7 +547,7 @@ public class Student
      * @param degreeDetails
      * The degree_details
      */
-    public void setDegreeDetails(Object degreeDetails) {
+    public void setDegreeDetails(String degreeDetails) {
         this.degreeDetails = degreeDetails;
     }
 
@@ -528,7 +556,7 @@ public class Student
      * @return
      * The alternativeContact
      */
-    public Object getAlternativeContact() {
+    public String getAlternativeContact() {
         return alternativeContact;
     }
 
@@ -537,7 +565,7 @@ public class Student
      * @param alternativeContact
      * The alternative_contact
      */
-    public void setAlternativeContact(Object alternativeContact) {
+    public void setAlternativeContact(String alternativeContact) {
         this.alternativeContact = alternativeContact;
     }
 
@@ -546,7 +574,7 @@ public class Student
      * @return
      * The preferredName
      */
-    public Object getPreferredName() {
+    public String getPreferredName() {
         return preferredName;
     }
 
@@ -555,7 +583,7 @@ public class Student
      * @param preferredName
      * The preferred_name
      */
-    public void setPreferredName(Object preferredName) {
+    public void setPreferredName(String preferredName) {
         this.preferredName = preferredName;
     }
 }

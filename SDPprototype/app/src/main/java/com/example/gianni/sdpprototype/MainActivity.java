@@ -1,5 +1,6 @@
 package com.example.gianni.sdpprototype;
 
+import android.app.Application;
 import android.app.FragmentManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -27,6 +28,7 @@ import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
 import com.example.gianni.sdpprototype.Fragments.HistoryFragment;
 import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
 import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
+import com.orm.SugarContext;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,7 +37,8 @@ public class MainActivity extends AppCompatActivity
     private IntentFilter[] mNdefExchangeFilters;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -49,6 +52,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        SugarContext.init(getApplicationContext());
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
@@ -104,6 +109,14 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(getApplicationContext(), parentID, Toast.LENGTH_SHORT).show();
         fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendanceFragment()).commit();
     }
+
+    @Override
+    public void onDestroy()
+    {
+        SugarContext.terminate();
+        super.finish();
+    }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

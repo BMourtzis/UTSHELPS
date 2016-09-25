@@ -13,6 +13,7 @@ import com.example.gianni.sdpprototype.Models.Student;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.StudentResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
+import com.orm.SugarContext;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,6 +42,8 @@ public class AccountFragment extends Fragment {
             public void onResponse(Call<StudentResponse> call, Response<StudentResponse> response)
             {
                 Student student = response.body().getStudent();
+
+                student.save();
 
                 TextView idText = (TextView) accountView.findViewById(R.id.account_id_value);
                 idText.setText(student.getStudentID());

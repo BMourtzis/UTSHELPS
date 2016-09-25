@@ -13,7 +13,7 @@ public class RestClient
     public RestClient()
     {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://104.210.115.90/api/")
+                .baseUrl("http://40.126.224.182/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
