@@ -1,6 +1,5 @@
 package com.example.gianni.sdpprototype.Fragments;
 
-import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.gianni.sdpprototype.Adapters.WorkshopSetListAdapter;
-import com.example.gianni.sdpprototype.Models.WorkshopSet;
+import com.example.gianni.sdpprototype.Adapters.WorkshopListAdapter;
+import com.example.gianni.sdpprototype.Models.Workshop;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
@@ -24,33 +23,36 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by Gianni on 7/09/2016.
+ * Created by Vasil on 28/9/2016.
  */
-public class UpcomingSessionsFragment extends ListFragment {
 
-    OnWorkshopSetListener mCallback;
+public class WorkshopListFragment extends ListFragment {
     View upcomingSessions;
-    ArrayList<WorkshopSet> items;
+    ArrayList<Workshop> items;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
-        RestClient client = new RestClient();
-        Call<GenericResponse<List<WorkshopSet>>> call = client.getHelpsService().getWorkshopSets(true);
+        Bundle args = getArguments();
 
-        call.enqueue(new Callback<GenericResponse<List<WorkshopSet>>>() {
+        int id = args.getInt("id");
+
+        RestClient client = new RestClient();
+        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id);
+
+        call.enqueue(new Callback<GenericResponse<List<Workshop>>>() {
             @Override
-            public void onResponse(Call<GenericResponse<List<WorkshopSet>>> call, Response<GenericResponse<List<WorkshopSet>>> response)
+            public void onResponse(Call<GenericResponse<List<Workshop>>> call, Response<GenericResponse<List<Workshop>>> response)
             {
-                items = new ArrayList<WorkshopSet>(response.body().getResult());
-                WorkshopSetListAdapter adapter = new WorkshopSetListAdapter(getActivity(), R.layout.workshop_set_item_layout, items);
+                items = new ArrayList<Workshop>(response.body().getResult());
+                WorkshopListAdapter adapter = new WorkshopListAdapter(getActivity(), R.layout.workshop_set_item_layout, items);
                 setListAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<GenericResponse<List<WorkshopSet>>> call, Throwable t)
+            public void onFailure(Call<GenericResponse<List<Workshop>>> call, Throwable t)
             {
                 int i = 0;
             }
@@ -58,24 +60,10 @@ public class UpcomingSessionsFragment extends ListFragment {
     }
 
     @Override
-    public void onAttach(Activity activity)
-    {
-        super.onAttach(activity);
-        try
-        {
-            mCallback = (OnWorkshopSetListener) activity;
-        }
-        catch(ClassCastException e)
-        {
-            throw new ClassCastException(activity.toString() + "must implement");
-        }
-    }
-
-    @Override
     public void onListItemClick(ListView l, View v, int position, long id)
     {
-        WorkshopSet set = items.get(position);
-        mCallback.onWorkshopSetItemSelected(set.getId());
+        Workshop set = items.get(position);
+
     }
 
     @Nullable
@@ -87,9 +75,4 @@ public class UpcomingSessionsFragment extends ListFragment {
 
         return upcomingSessions;
     }
-
-    public interface OnWorkshopSetListener{
-        public void onWorkshopSetItemSelected(int id);
-    }
 }
-

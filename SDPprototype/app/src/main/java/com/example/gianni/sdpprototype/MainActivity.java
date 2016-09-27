@@ -28,10 +28,10 @@ import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
 import com.example.gianni.sdpprototype.Fragments.HistoryFragment;
 import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
 import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
-import com.orm.SugarContext;
+import com.example.gianni.sdpprototype.Fragments.WorkshopListFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, UpcomingSessionsFragment.OnWorkshopSetListener {
     private NfcAdapter mNfcAdapter;
     private PendingIntent mNfcPendingIntent;
     private IntentFilter[] mNdefExchangeFilters;
@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        SugarContext.init(getApplicationContext());
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
@@ -110,13 +108,6 @@ public class MainActivity extends AppCompatActivity
         fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendanceFragment()).commit();
     }
 
-    @Override
-    public void onDestroy()
-    {
-        SugarContext.terminate();
-        super.finish();
-    }
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -153,5 +144,17 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onWorkshopSetItemSelected(int id) {
+        FragmentManager fragmentManager = getFragmentManager();
+
+        WorkshopListFragment workshopListFragment = new WorkshopListFragment();
+        Bundle args = new Bundle();
+        args.putInt("id", id);
+        workshopListFragment.setArguments(args);
+
+        fragmentManager.beginTransaction().replace(R.id.content_frame, workshopListFragment).commit();
     }
 }

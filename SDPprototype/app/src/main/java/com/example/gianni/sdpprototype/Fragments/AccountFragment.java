@@ -11,9 +11,8 @@ import android.widget.TextView;
 
 import com.example.gianni.sdpprototype.Models.Student;
 import com.example.gianni.sdpprototype.R;
-import com.example.gianni.sdpprototype.Responses.StudentResponse;
+import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
-import com.orm.SugarContext;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,15 +34,13 @@ public class AccountFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_account);
 
         RestClient client = new RestClient();
-        Call<StudentResponse> call = client.getHelpsService().getStudent("11386617");
+        Call<GenericResponse<Student>> call = client.getHelpsService().getStudent("11386617");
 
-        call.enqueue(new Callback<StudentResponse>() {
+        call.enqueue(new Callback<GenericResponse<Student>>() {
             @Override
-            public void onResponse(Call<StudentResponse> call, Response<StudentResponse> response)
+            public void onResponse(Call<GenericResponse<Student>> call, Response<GenericResponse<Student>> response)
             {
-                Student student = response.body().getStudent();
-
-                student.save();
+                Student student = response.body().getResult();
 
                 TextView idText = (TextView) accountView.findViewById(R.id.account_id_value);
                 idText.setText(student.getStudentID());
@@ -59,7 +56,7 @@ public class AccountFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<StudentResponse> call, Throwable t)
+            public void onFailure(Call<GenericResponse<Student>> call, Throwable t)
             {
 
             }

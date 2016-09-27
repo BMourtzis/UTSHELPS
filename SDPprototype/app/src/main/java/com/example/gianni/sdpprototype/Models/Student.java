@@ -1,16 +1,13 @@
 package com.example.gianni.sdpprototype.Models;
 
-import com.orm.SugarRecord;
-import com.orm.dsl.Ignore;
-import com.orm.dsl.Table;
+
 
 /**
  * Created by Vasil on 24/9/2016.
  */
 
 
-@Table
-public class Student extends SugarRecord
+public class Student
 {
     private String studentID;
     private String dob;
@@ -20,41 +17,23 @@ public class Student extends SugarRecord
     private String first_language;
     private String country_origin;
     private String background;
-    @Ignore
     private boolean HSC;
-    @Ignore
     private String hSCMark;
-    @Ignore
     private boolean iELTS;
-    @Ignore
     private String iELTSMark;
-    @Ignore
     private boolean tOEFL;
-    @Ignore
     private String tOEFLMark;
-    @Ignore
     private boolean tAFE;
-    @Ignore
     private String tAFEMark;
-    @Ignore
     private boolean cULT;
-    @Ignore
     private String cULTMark;
-    @Ignore
     private boolean insearchDEEP;
-    @Ignore
     private String insearchDEEPMark;
-    @Ignore
     private boolean insearchDiploma;
-    @Ignore
     private String insearchDiplomaMark;
-    @Ignore
     private boolean foundationcourse;
-    @Ignore
     private String foundationcourseMark;
-    @Ignore
     private String created;
-    @Ignore
     private Integer creatorID;
     private String degreeDetails;
     private String alternativeContact;
