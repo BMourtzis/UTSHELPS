@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.gianni.sdpprototype.Adapters.WorkshopSetListAdapter;
+import com.example.gianni.sdpprototype.FragmentCallback;
 import com.example.gianni.sdpprototype.Models.WorkshopSet;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
@@ -28,7 +29,7 @@ import retrofit2.Response;
  */
 public class UpcomingSessionsFragment extends ListFragment {
 
-    OnWorkshopSetListener mCallback;
+    FragmentCallback mCallback;
     View upcomingSessions;
     ArrayList<WorkshopSet> items;
 
@@ -63,7 +64,7 @@ public class UpcomingSessionsFragment extends ListFragment {
         super.onAttach(activity);
         try
         {
-            mCallback = (OnWorkshopSetListener) activity;
+            mCallback = (FragmentCallback) activity;
         }
         catch(ClassCastException e)
         {
@@ -86,10 +87,6 @@ public class UpcomingSessionsFragment extends ListFragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_upcoming_sessions);
 
         return upcomingSessions;
-    }
-
-    public interface OnWorkshopSetListener{
-        public void onWorkshopSetItemSelected(int id);
     }
 }
 

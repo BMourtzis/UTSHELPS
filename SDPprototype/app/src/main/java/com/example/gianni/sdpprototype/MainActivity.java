@@ -1,6 +1,5 @@
 package com.example.gianni.sdpprototype;
 
-import android.app.Application;
 import android.app.FragmentManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -9,29 +8,28 @@ import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.gianni.sdpprototype.Fragments.AboutFragment;
 import com.example.gianni.sdpprototype.Fragments.AccountFragment;
-import com.example.gianni.sdpprototype.Fragments.BookingsFragment;
+import com.example.gianni.sdpprototype.Fragments.BookingFragment;
+import com.example.gianni.sdpprototype.Fragments.BookingListFragment;
 import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
 import com.example.gianni.sdpprototype.Fragments.HistoryFragment;
 import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
 import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
 import com.example.gianni.sdpprototype.Fragments.WorkshopListFragment;
+import com.example.gianni.sdpprototype.Models.Booking;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, UpcomingSessionsFragment.OnWorkshopSetListener {
+        implements NavigationView.OnNavigationItemSelectedListener, FragmentCallback {
     private NfcAdapter mNfcAdapter;
     private PendingIntent mNfcPendingIntent;
     private IntentFilter[] mNdefExchangeFilters;
@@ -119,7 +117,7 @@ public class MainActivity extends AppCompatActivity
         switch (id)
         {
             case R.id.nav_bookings:
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new BookingsFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new BookingListFragment()).commit();
                 break;
             case R.id.nav_upcoming_sessions:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new UpcomingSessionsFragment()).commit();
@@ -144,6 +142,18 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onBookingItemSelected(Booking booking) {
+        FragmentManager fragmentManager = getFragmentManager();
+
+        BookingFragment bookingFragment = new BookingFragment();
+        Bundle args = new Bundle();
+        args.putParcelable("booking", booking);
+        bookingFragment.setArguments(args);
+
+        fragmentManager.beginTransaction().replace(R.id.content_frame, bookingFragment).commit();
     }
 
     @Override

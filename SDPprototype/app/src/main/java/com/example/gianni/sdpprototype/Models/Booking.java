@@ -1,11 +1,14 @@
 package com.example.gianni.sdpprototype.Models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by Vasil on 28/9/2016.
  */
-public class Booking
+public class Booking implements Parcelable
 {
     @SerializedName("BookingId")
     public Integer bookingId;
@@ -196,5 +199,33 @@ public class Booking
 
     public void setWorkshopArchived(String workshopArchived) {
         this.workshopArchived = workshopArchived;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(bookingId);
+        parcel.writeInt(workshopID);
+        parcel.writeString(studentID);
+        parcel.writeString(topic);
+        parcel.writeString(description);
+        parcel.writeString(targetingGroup);
+        parcel.writeInt(campusID);
+        parcel.writeString(starting);
+        parcel.writeString(ending);
+        parcel.writeInt(maximum);
+        parcel.writeInt(cutoff);
+        parcel.writeInt(canceled);
+        parcel.writeInt(attended);
+        parcel.writeInt(workShopSetID);
+        parcel.writeString(type);
+        parcel.writeInt(reminderNum);
+        parcel.writeInt(reminderSent);
+        parcel.writeString(workshopArchived);
+        parcel.writeString(bookingArchived);
     }
 }
