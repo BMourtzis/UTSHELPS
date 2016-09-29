@@ -24,6 +24,7 @@ import retrofit2.http.QueryMap;
  */
 public interface HELPS_Service
 {
+    //GETS
     @Headers("AppKey:123456")
     @GET("student/get")
     Call<GenericResponse<Student>> getStudent(@Query("studentId") String studentId);
@@ -44,12 +45,13 @@ public interface HELPS_Service
     @GET("workshop/booking/search")
     Call<GenericResponse<List<Booking>>>  getBookingList(@Query("StudentId") String studentId);
 
+    //POSTS
     @Headers({
             "AppKey:123456",
             "Content-Type:application/json"
     })
     @POST("student/register")
-    Call<GenericResponse<Objects>> registerStudent(@Body Student student);
+    Call<GenericResponse> registerStudent(@Body Student student);
 
     @Headers("AppKey:123456")
     @POST("workshop/booking/create")

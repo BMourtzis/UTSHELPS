@@ -1,6 +1,8 @@
 package com.example.gianni.sdpprototype.Fragments;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -33,8 +35,11 @@ public class AccountFragment extends Fragment {
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_account);
 
+        SharedPreferences sharedPrefs = getActivity().getSharedPreferences("utshelps", Context.MODE_PRIVATE);
+        String studentId = sharedPrefs.getString("studentId", "error");
+
         RestClient client = new RestClient();
-        Call<GenericResponse<Student>> call = client.getHelpsService().getStudent("11386617");
+        Call<GenericResponse<Student>> call = client.getHelpsService().getStudent(studentId);
 
         call.enqueue(new Callback<GenericResponse<Student>>() {
             @Override

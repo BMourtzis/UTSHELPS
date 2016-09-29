@@ -3,6 +3,8 @@ package com.example.gianni.sdpprototype.Fragments;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.ListFragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -40,8 +42,11 @@ public class BookingListFragment extends ListFragment {
     {
         super.onCreate(savedInstanceState);
 
+        SharedPreferences sharedPrefs = getActivity().getSharedPreferences("utshelps", Context.MODE_PRIVATE);
+        String studentId = sharedPrefs.getString("studentId", "error");
+
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList("11386617");
+        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId);
 
         call.enqueue(new Callback<GenericResponse<List<Booking>>>() {
             @Override

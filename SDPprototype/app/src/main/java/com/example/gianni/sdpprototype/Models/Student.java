@@ -44,6 +44,20 @@ public class Student
      */
     public Student(){ }
 
+    public Student(String studentID, String dob, String prefname, String deg, String gender, String status, String lang, String country, int creator)
+    {
+        this.studentID = studentID;
+        this.dob = dob;
+        this.preferredName = prefname;
+        this.degree = deg;
+        this.gender = gender;
+        this.status =  status;
+        this.first_language = lang;
+        this.country_origin = country;
+        this.creatorID = creator;
+    }
+
+
     /**
      *
      * @return
