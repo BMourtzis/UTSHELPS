@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView android:id="@+id/booking_topic"
@@ -9,10 +9,19 @@
         android:layout_height="wrap_content"
         android:text="This is a test" />
 
-    <TextView android:id="@+id/booking_starting"
+    <TextView android:id="@+id/booking_starting_label"
+        android:layout_below="@id/booking_topic"
         android:textSize="15sp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is a test" />
+        android:text="Starts @ " />
 
-</LinearLayout>
+    <TextView android:id="@+id/booking_starting"
+        android:layout_below="@id/booking_topic"
+        android:layout_toRightOf="@id/booking_starting_label"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test" />
+
+</RelativeLayout>

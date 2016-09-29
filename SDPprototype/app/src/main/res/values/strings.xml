@@ -2,7 +2,7 @@
     <string name="app_name">UTS HELPS</string>
 
     <string name="title_landing">Hi, Steve Jobs</string>
-    <string name="title_bookings">Bookings</string>
+    <string name="title_bookings">My Bookings</string>
     <string name="title_reminders">Reminders</string>
     <string name="title_upcoming_sessions">Upcoming Sessions</string>
     <string name="title_history">History</string>
