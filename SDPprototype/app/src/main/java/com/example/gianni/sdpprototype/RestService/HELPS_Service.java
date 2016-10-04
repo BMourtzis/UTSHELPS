@@ -6,14 +6,14 @@ import com.example.gianni.sdpprototype.Models.Student;
 import com.example.gianni.sdpprototype.Models.Workshop;
 import com.example.gianni.sdpprototype.Models.WorkshopSet;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
+import com.example.gianni.sdpprototype.Responses.ResponseType;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -26,7 +26,7 @@ public interface HELPS_Service
 {
     //GETS
     @Headers("AppKey:123456")
-    @GET("student/get")
+    @GET("student")
     Call<GenericResponse<Student>> getStudent(@Query("studentId") String studentId);
 
     @Headers("AppKey:123456")
@@ -35,7 +35,7 @@ public interface HELPS_Service
 
     @Headers("AppKey:123456")
     @GET("workshop/search")
-    Call<GenericResponse<List<Workshop>>>  getWorkshopList(@Query("workshopSet") int workshopset);
+    Call<GenericResponse<List<Workshop>>>  getWorkshopList(@Query("WorkshopSetId") int workshopset);
 
     @Headers("AppKey:123456")
     @GET("misc/campus")
@@ -45,15 +45,24 @@ public interface HELPS_Service
     @GET("workshop/booking/search")
     Call<GenericResponse<List<Booking>>>  getBookingList(@Query("StudentId") String studentId);
 
+    @Headers("AppKey:123456")
+    @GET("workshop/")
+    Call<GenericResponse<List<Workshop>>> getWorkshop(@Query("id") int workshopId);
+
     //POSTS
     @Headers({
             "AppKey:123456",
             "Content-Type:application/json"
     })
     @POST("student/register")
-    Call<GenericResponse> registerStudent(@Body Student student);
+    Call<ResponseType> registerStudent(@Body Student student);
 
     @Headers("AppKey:123456")
     @POST("workshop/booking/create")
-    Call<GenericResponse<Objects>> createBooking(@Query("workshopId") int workshopId, @Query("studentId") String studentId, @Query("userId") int userId);
+    Call<ResponseType> createBooking(@Query("workshopId") int workshopId, @Query("studentId") String studentId, @Query("userId") int userId);
+
+    @Headers("AppKey:123456")
+    @POST("workshop/booking/cancel")
+    Call<ResponseType> cancelBooking(@Query("workshopId") int workshopId, @Query("studentId") String studentId, @Query("userId") int userId);
+
 }

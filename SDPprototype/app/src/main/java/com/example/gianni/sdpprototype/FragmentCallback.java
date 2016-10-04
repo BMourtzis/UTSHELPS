@@ -10,4 +10,6 @@ public interface FragmentCallback {
     public void onBookingItemSelected(Booking booking);
 
     public void onWorkshopSetItemSelected(int id);
+
+    public void onWorkshopItemSelected(int id);
 }

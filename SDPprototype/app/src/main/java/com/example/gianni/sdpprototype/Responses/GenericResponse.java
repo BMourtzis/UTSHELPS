@@ -6,15 +6,15 @@ package com.example.gianni.sdpprototype.Responses;
 
 public class GenericResponse<T>
 {
-    private T Results;
+    private T Result;
     private Boolean isSuccess;
-    private Object displayMessage;
+    private String displayMessage;
 
-    public Object getDisplayMessage() {
+    public String getDisplayMessage() {
         return displayMessage;
     }
 
-    public void setDisplayMessage(Object displayMessage) {
+    public void setDisplayMessage(String displayMessage) {
         this.displayMessage = displayMessage;
     }
 
@@ -27,10 +27,10 @@ public class GenericResponse<T>
     }
 
     public T getResult() {
-        return Results;
+        return Result;
     }
 
     public void setResult(T result) {
-        Results = result;
+        Result = result;
     }
 }

@@ -16,7 +16,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gianni.sdpprototype.Fragments.AboutFragment;
@@ -27,6 +32,7 @@ import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
 import com.example.gianni.sdpprototype.Fragments.HistoryFragment;
 import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
 import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
+import com.example.gianni.sdpprototype.Fragments.WorkshopFragment;
 import com.example.gianni.sdpprototype.Fragments.WorkshopListFragment;
 import com.example.gianni.sdpprototype.Models.Booking;
 
@@ -61,6 +67,19 @@ public class MainActivity extends AppCompatActivity
                 getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP), 0);
     }
+
+//    @Override
+//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+//    {
+//        SharedPreferences sharedPrefs = getSharedPreferences("utshelps", Context.MODE_PRIVATE);
+//        String studentId = sharedPrefs.getString("studentId", "error");
+//
+//        TextView stid = (TextView) findViewById(R.id.navigation_header_name);
+//        stid.setText(studentId);
+//
+//        TextView emailText = (TextView) findViewById(R.id.navigation_header_email);
+//        emailText.append(studentId,0,0);
+//    }
 
     @Override
     protected void onResume() {
@@ -170,5 +189,17 @@ public class MainActivity extends AppCompatActivity
         workshopListFragment.setArguments(args);
 
         fragmentManager.beginTransaction().replace(R.id.content_frame, workshopListFragment).commit();
+    }
+
+    @Override
+    public void onWorkshopItemSelected(int id) {
+        FragmentManager fragmentManager = getFragmentManager();
+
+        WorkshopFragment workshopFragment = new WorkshopFragment();
+        Bundle args = new Bundle();
+        args.putInt("id", id);
+        workshopFragment.setArguments(args);
+
+        fragmentManager.beginTransaction().replace(R.id.content_frame, workshopFragment).commit();
     }
 }

@@ -63,7 +63,7 @@ public class AccountFragment extends Fragment {
             @Override
             public void onFailure(Call<GenericResponse<Student>> call, Throwable t)
             {
-
+                int i = 0;
             }
         });
 

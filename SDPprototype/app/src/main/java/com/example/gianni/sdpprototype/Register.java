@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.example.gianni.sdpprototype.Models.Student;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
+import com.example.gianni.sdpprototype.Responses.ResponseType;
 import com.example.gianni.sdpprototype.RestService.RestClient;
 
 import retrofit2.Call;
@@ -29,23 +30,23 @@ public class Register extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText studentIdText = (EditText) view.findViewById(R.id.register_id_edit);
-                EditText dobText = (EditText) view.findViewById(R.id.register_dob_edit);
-                EditText nameText = (EditText) view.findViewById(R.id.register_name_edit);
-                EditText genderText = (EditText) view.findViewById(R.id.register_gender_edit);
-                EditText degreeText = (EditText) view.findViewById(R.id.register_degree_edit);
-                EditText statusText = (EditText) view.findViewById(R.id.register_status_edit);
-                EditText langText = (EditText) view.findViewById(R.id.register_lang_edit);
-                EditText countryText = (EditText) view.findViewById(R.id.register_country_edit);
+                EditText studentIdText = (EditText) findViewById(R.id.register_id_edit);
+                EditText dobText = (EditText) findViewById(R.id.register_dob_edit);
+                EditText nameText = (EditText) findViewById(R.id.register_name_edit);
+                EditText genderText = (EditText) findViewById(R.id.register_gender_edit);
+                EditText degreeText = (EditText) findViewById(R.id.register_degree_edit);
+                EditText statusText = (EditText) findViewById(R.id.register_status_edit);
+                EditText langText = (EditText) findViewById(R.id.register_lang_edit);
+                EditText countryText = (EditText) findViewById(R.id.register_country_edit);
 
                 Student student = new Student(studentIdText.toString(), dobText.toString(), nameText.toString(), degreeText.toString(), genderText.toString(), statusText.toString(), langText.toString(), countryText.toString(), 1);
 
                 RestClient client = new RestClient();
-                Call<GenericResponse> call = client.getHelpsService().registerStudent(student);
+                Call<ResponseType> call = client.getHelpsService().registerStudent(student);
 
-                call.enqueue(new Callback<GenericResponse>() {
+                call.enqueue(new Callback<ResponseType>() {
                     @Override
-                    public void onResponse(Call<GenericResponse> call, Response<GenericResponse> response) {
+                    public void onResponse(Call<ResponseType> call, Response<ResponseType> response) {
                         if(response.body().getSuccess() == true)
                         {
                             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
@@ -55,8 +56,8 @@ public class Register extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<GenericResponse> call, Throwable t) {
-
+                    public void onFailure(Call<ResponseType> call, Throwable t) {
+                        int i = 0;
                     }
                 });
             }

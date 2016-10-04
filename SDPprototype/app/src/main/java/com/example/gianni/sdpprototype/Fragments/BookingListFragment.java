@@ -52,13 +52,30 @@ public class BookingListFragment extends ListFragment {
             @Override
             public void onResponse(Call<GenericResponse<List<Booking>>> call, Response<GenericResponse<List<Booking>>> response) {
                 items = new ArrayList<Booking>(response.body().getResult());
+
+                for(int i = 0; i < items.size(); i++)
+                {
+                    try
+                    {
+                        if(items.get(i).getCanceled() == 1)
+                        {
+                            items.remove(i);
+                        }
+                    }
+                    catch(Exception e)
+                    {
+
+                    }
+                }
+
                 BookingListAdapter adapter = new BookingListAdapter(getActivity(), R.layout.booking_list_item, items);
                 setListAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<GenericResponse<List<Booking>>> call, Throwable t) {
-
+            public void onFailure(Call<GenericResponse<List<Booking>>> call, Throwable t)
+            {
+                int i = 0;
             }
         });
     }

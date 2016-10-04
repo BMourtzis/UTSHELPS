@@ -1,6 +1,7 @@
 package com.example.gianni.sdpprototype.Models;
 
 
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by Vasil on 24/9/2016.
@@ -10,11 +11,14 @@ package com.example.gianni.sdpprototype.Models;
 public class Student
 {
     private String studentID;
+    @SerializedName("DateOfBirth")
     private String dob;
     private String gender;
     private String degree;
     private String status;
+    @SerializedName("FirstLanguage")
     private String first_language;
+    @SerializedName("CountryOrigin")
     private String country_origin;
     private String background;
     private boolean HSC;

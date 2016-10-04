@@ -1,5 +1,6 @@
 package com.example.gianni.sdpprototype.Fragments;
 
+import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.gianni.sdpprototype.Adapters.WorkshopListAdapter;
+import com.example.gianni.sdpprototype.FragmentCallback;
 import com.example.gianni.sdpprototype.Models.Workshop;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
@@ -27,6 +29,7 @@ import retrofit2.Response;
  */
 
 public class WorkshopListFragment extends ListFragment {
+    FragmentCallback mCallback;
     View upcomingSessions;
     ArrayList<Workshop> items;
 
@@ -60,10 +63,24 @@ public class WorkshopListFragment extends ListFragment {
     }
 
     @Override
+    public void onAttach(Activity activity)
+    {
+        super.onAttach(activity);
+        try
+        {
+            mCallback = (FragmentCallback) activity;
+        }
+        catch(ClassCastException e)
+        {
+            throw new ClassCastException(activity.toString() + "must implement");
+        }
+    }
+
+    @Override
     public void onListItemClick(ListView l, View v, int position, long id)
     {
-        Workshop set = items.get(position);
-
+        Workshop workshop = items.get(position);
+        mCallback.onWorkshopItemSelected(workshop.getWorkshopId());
     }
 
     @Nullable

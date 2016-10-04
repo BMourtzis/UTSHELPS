@@ -58,6 +58,13 @@
         android:layout_height="wrap_content"
         android:text="Test" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_button_cancel_booking"
+        android:layout_marginTop="12dp"
+        android:id="@+id/booking_cancel_button" />
+
     </LinearLayout>
 
 </ScrollView>
