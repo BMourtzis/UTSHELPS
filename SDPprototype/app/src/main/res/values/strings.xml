@@ -2,12 +2,12 @@
     <string name="app_name">UTS HELPS</string>
 
     <string name="title_landing">Hi, Steve Jobs</string>
-    <string name="title_bookings">My Bookings</string>
-    <string name="title_reminders">Reminders</string>
-    <string name="title_upcoming_sessions">Upcoming Sessions</string>
-    <string name="title_history">History</string>
+    <string name="title_bookings">Home</string>
+    <string name="title_reminders">Notifications</string>
+    <string name="title_upcoming_sessions">Upcoming Workshop</string>
+    <string name="title_history">Booking History</string>
     <string name="title_about">About</string>
-    <string name="title_account">Account</string>
+    <string name="title_account">Profile</string>
     <string name="title_register">Register</string>
     <string name="title_workshop_details">Workshop Details</string>
     <string name="title_check_attendance">Check Attendance</string>
