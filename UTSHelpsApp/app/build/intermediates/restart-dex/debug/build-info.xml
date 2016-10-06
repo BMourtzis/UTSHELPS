@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="24"
+    density="560dpi"
+    format="7"
+    timestamp="165900302190110"
+    token="-7274228371770007357" >
+
+    <task
+        name="javac"
+        duration="351" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="87" />
+    <task
+        name="verifier"
+        duration="31" />
+
+    <artifact
+        location="C:\Users\Vasil_000\Documents\Repos\UTSHELPS\UTSHelpsApp\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+        type="DEX" />
+
+    <build timestamp="164800894901731" >
+        <artifact
+            location="C:\Users\Vasil_000\Documents\Repos\UTSHELPS\UTSHelpsApp\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build timestamp="165900302190110" >
+        <artifact
+            location="C:\Users\Vasil_000\Documents\Repos\UTSHELPS\UTSHelpsApp\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>

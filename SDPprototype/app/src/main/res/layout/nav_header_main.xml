@@ -12,23 +12,24 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/navigation_header_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@android:drawable/sym_def_app_icon" />
+        android:src="@drawable/helps_icon" />
 
     <TextView
+        android:id="@+id/navigation_header_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Steve Jobs"
+        android:text=""
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/navigation_header_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="steve.jobs@student.uts.edu.au" />
+        android:text="@string/navigation_email_ending" />
 
 </LinearLayout>

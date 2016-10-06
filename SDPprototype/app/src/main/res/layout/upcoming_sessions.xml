@@ -4,29 +4,17 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Select a session to attend"
-        android:id="@+id/textView2"
+        android:text="Select the type of workshop"
+        android:id="@+id/workshop_list_heading"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Study Efficiently"
-        android:layout_below="@+id/textView2"
-        android:id="@+id/button1"/>
+    <ListView
+        android:layout_below="@+id/workshop_list_heading"
+        android:id="@android:id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:text="Write Efficiently"
-        android:id="@+id/button2"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:text="Write Like a Professional"/>
 </RelativeLayout>
