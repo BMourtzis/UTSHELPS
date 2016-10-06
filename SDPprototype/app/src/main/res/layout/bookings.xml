@@ -4,37 +4,16 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="My Bookings"
-        android:id="@+id/textView2" />
+        android:text="Select booking to see its details"
+        android:id="@+id/booking_list_heading"
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Understanding Turnitin"
-        android:layout_below="@+id/textView2"
-        android:id="@+id/button1"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:text="Practising Better Study Habits"
-        android:id="@+id/button2"/>
-
-    <TextView
+    <ListView
+        android:layout_below="@+id/booking_list_heading"
+        android:id="@android:id/list"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="My Waiting List"
-        android:layout_below="@+id/button2"
-        android:id="@+id/textView3" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:text="Learning Confidence Building Tricks"/>
+        android:layout_height="wrap_content"></ListView>
 
 </RelativeLayout>
