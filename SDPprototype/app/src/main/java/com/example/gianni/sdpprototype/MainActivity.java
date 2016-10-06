@@ -29,6 +29,7 @@ import com.example.gianni.sdpprototype.Fragments.AccountFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingListFragment;
 import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
+import com.example.gianni.sdpprototype.Fragments.FAQFragment;
 import com.example.gianni.sdpprototype.Fragments.HistoryFragment;
 import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
 import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
@@ -159,6 +160,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_check_attendance:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendanceFragment()).commit();
+                break;
+            case R.id.nav_faq:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new FAQFragment()).commit();
                 break;
         }
 

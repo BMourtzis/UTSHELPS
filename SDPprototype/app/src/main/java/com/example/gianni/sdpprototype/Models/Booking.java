@@ -5,10 +5,14 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.SimpleDateFormat;
+import java.util.Comparator;
+import java.util.Date;
+
 /**
  * Created by Vasil on 28/9/2016.
  */
-public class Booking implements Parcelable
+public class Booking implements Parcelable, Comparator<Booking>, Comparable<Booking>
 {
     @SerializedName("BookingId")
     public Integer bookingId;
@@ -114,7 +118,7 @@ public class Booking implements Parcelable
     }
 
     public String getStarting() {
-        return starting;
+        return getDate(starting);
     }
 
     public void setStarting(String starting) {
@@ -122,10 +126,11 @@ public class Booking implements Parcelable
     }
 
     public String getEnding() {
-        return ending;
+        return getDate(ending);
     }
 
     public void setEnding(String ending) {
+
         this.ending = ending;
     }
 
@@ -227,5 +232,45 @@ public class Booking implements Parcelable
         parcel.writeInt(reminderSent);
         parcel.writeString(workshopArchived);
         parcel.writeString(bookingArchived);
+    }
+
+    @Override
+    public int compareTo(Booking booking) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        Date datethis = new Date();
+        Date dateother = new Date();
+        try
+        {
+            datethis = format.parse(this.ending);
+            dateother = format.parse(booking.ending);
+        }
+        catch(Exception e)
+        {
+
+        }
+
+        return  dateother.compareTo(datethis);
+    }
+
+    @Override
+    public int compare(Booking booking, Booking t1) {
+        return 0;
+    }
+
+    private String getDate(String datetime)
+    {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat strFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        Date date = new Date();
+
+        try
+        {
+             date = format.parse(datetime);
+        }
+        catch(Exception e)
+        {
+
+        }
+        return strFormat.format(date);
     }
 }

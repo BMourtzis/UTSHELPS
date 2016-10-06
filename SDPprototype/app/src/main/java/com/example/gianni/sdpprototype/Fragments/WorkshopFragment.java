@@ -39,6 +39,7 @@ public class WorkshopFragment extends Fragment
     View workshopView;
     Workshop item;
     List<Booking> items = new ArrayList<Booking>();
+    boolean isbooked = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -73,16 +74,7 @@ public class WorkshopFragment extends Fragment
                 TextView endingText = (TextView) workshopView.findViewById(R.id.workshop_details_value_ending);
                 endingText.setText(item.getEndDate());
 
-                Button button = (Button) workshopView.findViewById(R.id.workshop_booking_button);
-
-                if(checkIfBooked(item.getWorkshopId()))
-                {
-                    button.setText("Booked");
-                }
-                else
-                {
-                    button.setOnClickListener(getClickListerner(item.getWorkshopId()));
-                }
+                checkIfBooked(item.getWorkshopId());
             }
 
             @Override
@@ -131,7 +123,7 @@ public class WorkshopFragment extends Fragment
         return listener;
     }
 
-    private boolean checkIfBooked(final int workshopId)
+    private void checkIfBooked(final int workshopId)
     {
         SharedPreferences sharedPrefs = getActivity().getSharedPreferences("utshelps", Context.MODE_PRIVATE);
         String studentId = sharedPrefs.getString("studentId", "error");
@@ -144,6 +136,22 @@ public class WorkshopFragment extends Fragment
             public void onResponse(Call<GenericResponse<List<Booking>>> call, Response<GenericResponse<List<Booking>>> response)
             {
                 items = response.body().getResult();
+                Button button = (Button) workshopView.findViewById(R.id.workshop_booking_button);
+
+                for(int i = 0; i < items.size(); i++)
+                {
+                    if(items.get(i).getWorkshopID() == workshopId)
+                    {
+                        button.setText("Booked");
+                        isbooked = true;
+                        break;
+                    }
+                }
+
+                if(!isbooked)
+                {
+                    button.setOnClickListener(getClickListerner(item.getWorkshopId()));
+                }
             }
 
             @Override
@@ -151,19 +159,6 @@ public class WorkshopFragment extends Fragment
 
             }
         });
-
-        boolean isbooked = false;
-
-        for(int i = 0; i < items.size(); i++)
-        {
-            if(items.get(i).getWorkshopID() == workshopId)
-            {
-                isbooked = true;
-                break;
-            }
-        }
-
-        return isbooked;
     }
 
     @Nullable

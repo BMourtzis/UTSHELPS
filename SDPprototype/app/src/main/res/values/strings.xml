@@ -6,7 +6,7 @@
     <string name="title_reminders">Notifications</string>
     <string name="title_upcoming_sessions">Upcoming Workshop</string>
     <string name="title_history">Booking History</string>
-    <string name="title_about">About</string>
+    <string name="title_about">Other Programs</string>
     <string name="title_account">Profile</string>
     <string name="title_register">Register</string>
     <string name="title_workshop_details">Workshop Details</string>
@@ -36,4 +36,41 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!--Strings for FAQ Page-->
+    <string name="title_faq_helps_program">Helps Program</string>
+
+    <string name="title_faq_helps_program_question_use">Who can use HELPS?</string>
+    <string name="title_faq_helps_program_question_where">Where is HELPS?</string>
+    <string name="title_faq_helps_program_question_cost">How much does it cost?</string>
+    <string name="title_faq_helps_program_question_assignment">Can you help me with my assignments?</string>
+    <string name="title_faq_helps_program_question_c_assignment">Can you proofread and correct my assignment?</string>
+    <string name="title_faq_helps_program_question_h_assignment">Can you help me with the content of my assignment?</string>
+    <string name="title_faq_helps_program_question_grammar">My lecturer says I need to improve my grammar. Can you help me?</string>
+    <string name="title_faq_helps_program_question_pronunciation">Can you help me with my pronunciation?</string>
+    <string name="title_faq_helps_program_question_presentation">Can I practise my seminar presentation with someone?</string>
+
+    <string name="title_faq_helps_program_answer_use">Any student enrolled in any faculty at UTS, and all members of UTS staff
+</string>
+    <string name="title_faq_helps_program_answer_where">HELPS is located on Building 1, Level 3 , room 8 (opposite the Careers service)
+</string>
+    <string name="title_faq_helps_program_answer_cost">Services are free of tuition fees for non-credit workshops and individual consultations.
+</string>
+    <string name="title_faq_helps_program_answer_assignment">Yes. HELPS offers various workshops and individual consultations. See our variety of programs for extra assistance under ‘Other Programs’
+</string>
+    <string name="title_faq_helps_program_answer_c_assignment">No. Our role is not to correct grammar or other errors in an assignment. We can help you develop your own editing strategies. You should also use a computer spell-check, find a competent friend and a good dictionary.
+</string>
+    <string name="title_faq_helps_program_answer_h_assignment">No. We can’t tell you what to say, we can only help you say it better and more clearly. While we’re happy to act as a sounding board for your ideas, content questions require the specialised disciplinary knowledge of lecturers and tutors in your faculty. You should take specific content questions directly to them.
+</string>
+    <string name="title_faq_helps_program_answer_grammar">Yes. You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
+</string>
+    <string name="title_faq_helps_program_answer_pronunciation">Yes.  You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
+</string>
+    <string name="title_faq_helps_program_answer_presentation">Yes. You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
+</string>
+
+    <string name="title_faq_exam">Exam Special Conditions</string>
+
+    <string name="title_faq_misc">Miscellaneous</string>
+    
 </resources>

@@ -2,6 +2,9 @@ package com.example.gianni.sdpprototype.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by Vasil on 28/9/2016.
  */
@@ -137,7 +140,7 @@ public class Workshop
      * The startDate
      */
     public String getStartDate() {
-        return startDate;
+        return getDate(startDate);
     }
 
     /**
@@ -155,7 +158,7 @@ public class Workshop
      * The endDate
      */
     public String getEndDate() {
-        return endDate;
+        return getDate(endDate);
     }
 
     /**
@@ -327,5 +330,22 @@ public class Workshop
      */
     public void setArchived(String archived) {
         this.archived = archived;
+    }
+
+    private String getDate(String datetime)
+    {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat strFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        Date date = new Date();
+
+        try
+        {
+            date = format.parse(datetime);
+        }
+        catch(Exception e)
+        {
+
+        }
+        return strFormat.format(date);
     }
 }
