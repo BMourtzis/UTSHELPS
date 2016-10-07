@@ -12,4 +12,8 @@ public interface FragmentCallback {
     public void onWorkshopSetItemSelected(int id);
 
     public void onWorkshopItemSelected(int id);
+
+    public void onWorkshopSearchIconSelected();
+
+    public void onSearchWorkshops(int campusId, int wsId, String StartingBegin, String StartingEnd);
 }

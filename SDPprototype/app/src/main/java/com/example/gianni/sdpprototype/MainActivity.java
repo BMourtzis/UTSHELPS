@@ -35,6 +35,8 @@ import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
 import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
 import com.example.gianni.sdpprototype.Fragments.WorkshopFragment;
 import com.example.gianni.sdpprototype.Fragments.WorkshopListFragment;
+import com.example.gianni.sdpprototype.Fragments.WorkshopSearchFragment;
+import com.example.gianni.sdpprototype.Fragments.WorkshopSearchResultFragment;
 import com.example.gianni.sdpprototype.Models.Booking;
 
 public class MainActivity extends AppCompatActivity
@@ -206,5 +208,30 @@ public class MainActivity extends AppCompatActivity
         workshopFragment.setArguments(args);
 
         fragmentManager.beginTransaction().replace(R.id.content_frame, workshopFragment).commit();
+    }
+
+    @Override
+    public void onWorkshopSearchIconSelected() {
+        FragmentManager fragmentManager = getFragmentManager();
+
+        WorkshopSearchFragment fragment = new WorkshopSearchFragment();
+
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+    }
+
+    @Override
+    public void onSearchWorkshops(int campusId, int wsId, String StartingBegin, String StartingEnd) {
+        FragmentManager fragmentManager = getFragmentManager();
+
+        WorkshopSearchResultFragment fragment = new WorkshopSearchResultFragment();
+
+        Bundle args = new Bundle();
+        args.putInt("campusId", campusId);
+        args.putInt("wsId", wsId);
+        args.putString("StartBegin", StartingBegin);
+        args.putString("StartEnd", StartingEnd);
+        fragment.setArguments(args);
+
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
     }
 }

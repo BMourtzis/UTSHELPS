@@ -8,6 +8,7 @@ import com.example.gianni.sdpprototype.Models.WorkshopSet;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.Responses.ResponseType;
 
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -48,6 +49,10 @@ public interface HELPS_Service
     @Headers("AppKey:123456")
     @GET("workshop/")
     Call<GenericResponse<List<Workshop>>> getWorkshop(@Query("id") int workshopId);
+
+    @Headers("AppKey:123456")
+    @GET("workshop/search")
+    Call<GenericResponse<List<Workshop>>> searchWorkshops(@Query("CampusId") String CampusId, @Query("WorkshopSetId") String workshopSetId, @Query("StartingDtBegin") Date StartingDtBegin, @Query("StartingDtEnd") Date StartingDtEnd, @Query("Active") boolean active, @Query("Page") int page, @Query("PageSize") int pageSize);
 
     //POSTS
     @Headers({

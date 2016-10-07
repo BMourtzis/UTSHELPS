@@ -23,7 +23,7 @@
     <string name="title_activity_login">Sign in</string>
     <string name="navigation_email_ending">\@student.uts.edu.au</string>
 
-    <!-- Strings related to login -->
+    <!-- Strings related to register -->
     <string name="prompt_studentId">Student ID</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_preferred_name">Preferred Name</string>
@@ -37,7 +37,7 @@
     <string name="register_form_label">Register Form</string>
 
 
-
+    <!--Strings related ro login-->
     <string name="action_sign_in">Sign in</string>
     <string name="action_register">Register</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -48,6 +48,12 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string name="upcoming_sessions_search">Search</string>
+    <string name="search_result_title">Search Results</string>
+
+    <!--String related to Workshop Search-->
+    <string name="prompt_search_topic">Topic</string>
 
     <!--Strings for FAQ Page-->
     <string name="title_faq_helps_program">Helps Program</string>
