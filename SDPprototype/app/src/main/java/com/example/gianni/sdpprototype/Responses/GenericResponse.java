@@ -7,23 +7,24 @@ package com.example.gianni.sdpprototype.Responses;
 public class GenericResponse<T>
 {
     private T Result;
-    private Boolean isSuccess;
-    private String displayMessage;
+    private Boolean IsSuccess;
+
+    private String DisplayMessage;
 
     public String getDisplayMessage() {
-        return displayMessage;
+        return DisplayMessage;
     }
 
     public void setDisplayMessage(String displayMessage) {
-        this.displayMessage = displayMessage;
+        this.DisplayMessage = displayMessage;
     }
 
     public Boolean getSuccess() {
-        return isSuccess;
+        return IsSuccess;
     }
 
     public void setSuccess(Boolean success) {
-        isSuccess = success;
+        IsSuccess = success;
     }
 
     public T getResult() {

@@ -2,7 +2,9 @@ package com.example.gianni.sdpprototype;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,7 +41,7 @@ public class Register extends AppCompatActivity {
                 EditText langText = (EditText) findViewById(R.id.register_lang_edit);
                 EditText countryText = (EditText) findViewById(R.id.register_country_edit);
 
-                Student student = new Student(studentIdText.toString(), dobText.toString(), nameText.toString(), degreeText.toString(), genderText.toString(), statusText.toString(), langText.toString(), countryText.toString(), 1);
+                Student student = new Student(studentIdText.getText().toString(), dobText.getText().toString(), nameText.getText().toString(), degreeText.getText().toString(), genderText.getText().toString(), statusText.getText().toString(), langText.getText().toString(), countryText.getText().toString(), 1);
 
                 RestClient client = new RestClient();
                 Call<ResponseType> call = client.getHelpsService().registerStudent(student);

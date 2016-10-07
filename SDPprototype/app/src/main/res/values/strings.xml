@@ -24,8 +24,20 @@
     <string name="navigation_email_ending">\@student.uts.edu.au</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">StudentID</string>
+    <string name="prompt_studentId">Student ID</string>
     <string name="prompt_password">Password</string>
+    <string name="prompt_preferred_name">Preferred Name</string>
+    <string name="prompt_dob">Date of Birth</string>
+    <string name="prompt_gender">Gender</string>
+    <string name="prompt_degree">Degree</string>
+    <string name="prompt_status">Status</string>
+    <string name="prompt_first_language">First Language</string>
+    <string name="prompt_origin_country">Country of Origin</string>
+    <string name="register_button">Create Account</string>
+    <string name="register_form_label">Register Form</string>
+
+
+
     <string name="action_sign_in">Sign in</string>
     <string name="action_register">Register</string>
     <string name="action_sign_in_short">Sign in</string>

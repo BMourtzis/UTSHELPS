@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -29,9 +30,18 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.gianni.sdpprototype.Models.Student;
+import com.example.gianni.sdpprototype.Responses.GenericResponse;
+import com.example.gianni.sdpprototype.RestService.RestClient;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -62,10 +72,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private View focusView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        checkExistingCredentials();
+
         setContentView(R.layout.activity_login);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -104,6 +118,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    private void checkExistingCredentials()
+    {
+        SharedPreferences sharedPrefs = getSharedPreferences("utshelps", Context.MODE_PRIVATE);
+        String studentId = sharedPrefs.getString("studentId", "error");
+        if(!studentId.equals("error"))
+        {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void populateAutoComplete() {
@@ -160,6 +186,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return;
         }
 
+        showProgress(true);
+
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
@@ -169,7 +197,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
-        View focusView = null;
+        focusView = null;
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
@@ -194,12 +222,42 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
-            showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            checkStudent(email, password);
         }
+    }
+
+    private void checkStudent(final String email, final String password)
+    {
+        RestClient client = new RestClient();
+        Call<GenericResponse<Student>> call = client.getHelpsService().getStudent(email);
+
+        call.enqueue(new Callback<GenericResponse<Student>>() {
+            @Override
+            public void onResponse(Call<GenericResponse<Student>> call, Response<GenericResponse<Student>> response) {
+                boolean success = response.body().getSuccess();
+                if(success)
+                {
+                    // Show a progress spinner, and kick off a background task to
+                    // perform the user login attempt.
+                    mAuthTask = new UserLoginTask(email, password);
+                    mAuthTask.execute((Void) null);
+                }
+                else
+                {
+                    showProgress(false);
+                    mEmailView.setError("The student ID is incorrect");
+                    mPasswordView.setError("The password is incorrect");
+                    mEmailView.requestFocus();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Incorrect Credentials. Please try again.", 5);
+                    toast.show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GenericResponse<Student>> call, Throwable t) {
+
+            }
+        });
     }
 
     private boolean isEmailValid(String email) {
