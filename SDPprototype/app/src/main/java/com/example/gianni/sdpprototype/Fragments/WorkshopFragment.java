@@ -162,7 +162,7 @@ public class WorkshopFragment extends Fragment
         String studentId = sharedPrefs.getString("studentId", "error");
 
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId);
+        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId, true, 0, 2000);
 
         call.enqueue(new Callback<GenericResponse<List<Booking>>>() {
             @Override

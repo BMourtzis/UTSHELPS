@@ -17,7 +17,9 @@ import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,6 +34,7 @@ public class WorkshopListFragment extends ListFragment {
     FragmentCallback mCallback;
     View upcomingSessions;
     ArrayList<Workshop> items;
+    int currectPage = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -42,8 +45,23 @@ public class WorkshopListFragment extends ListFragment {
 
         int id = args.getInt("id");
 
+//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//
+//        Date StartingDate = new Date();
+//        Date EndingDate = new Date();
+//
+//        try
+//        {
+//            StartingDate = sdf.parse("09/10/2015");
+//        }
+//        catch(Exception e)
+//        {
+//
+//        }
+
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id);
+        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id, "09/10/2015", "09/10/2016", true, currectPage, 20);
+        currectPage++;
 
         call.enqueue(new Callback<GenericResponse<List<Workshop>>>() {
             @Override

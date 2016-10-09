@@ -50,30 +50,6 @@ public class WorkshopSearchResultFragment extends ListFragment {
         String startBegin = args.getString("StartBegin", "");
         String startEnd = args.getString("StartEnd", "");
 
-        Date sBegin = new Date();
-        Date sEnd = new Date();
-
-        if(startBegin.equals("") || startEnd.equals(""))
-        {
-            sBegin = null;
-            sEnd = null;
-        }
-        else
-        {
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-
-            try
-            {
-                sBegin = format.parse(startBegin);
-                sEnd = format.parse(startEnd);
-
-            }
-            catch(Exception e)
-            {
-
-            }
-        }
-
         String CampusId = "";
         String WorkshopId = "";
 
@@ -88,7 +64,7 @@ public class WorkshopSearchResultFragment extends ListFragment {
         }
 
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().searchWorkshops(CampusId, WorkshopId, sBegin, sEnd, true, ++page, pageSize);
+        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().searchWorkshops(CampusId, WorkshopId, startBegin, startEnd, true, ++page, pageSize);
 
         call.enqueue(new Callback<GenericResponse<List<Workshop>>>() {
             @Override

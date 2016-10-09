@@ -20,6 +20,7 @@ import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,6 +35,7 @@ public class BookingListFragment extends ListFragment {
     FragmentCallback mCallback;
     View bookingsView;
     ArrayList<Booking> items;
+    int currectPage = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -44,7 +46,8 @@ public class BookingListFragment extends ListFragment {
         String studentId = sharedPrefs.getString("studentId", "error");
 
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId);
+        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId, true, currectPage, 20);
+        currectPage++;
 
         call.enqueue(new Callback<GenericResponse<List<Booking>>>() {
             @Override
@@ -55,7 +58,7 @@ public class BookingListFragment extends ListFragment {
                 {
                     try
                     {
-                        if(items.get(i).getCanceled() == 1)
+                        if(items.get(i).getBookingArchived() != null)
                         {
                             items.remove(i);
                         }

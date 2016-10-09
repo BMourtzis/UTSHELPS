@@ -37,7 +37,7 @@ public interface HELPS_Service
 
     @Headers("AppKey:123456")
     @GET("workshop/search")
-    Call<GenericResponse<List<Workshop>>>  getWorkshopList(@Query("WorkshopSetId") int workshopset);
+    Call<GenericResponse<List<Workshop>>>  getWorkshopList(@Query("WorkshopSetId") int workshopset,  @Query("StartingDtBegin") String StartingDtBegin, @Query("StartingDtEnd") String StartingDtEnd, @Query("Active") boolean active, @Query("Page") int page, @Query("PageSize") int pageSize);
 
     @Headers("AppKey:123456")
     @GET("misc/campus")
@@ -45,7 +45,11 @@ public interface HELPS_Service
 
     @Headers("AppKey:123456")
     @GET("workshop/booking/search")
-    Call<GenericResponse<List<Booking>>>  getBookingList(@Query("StudentId") String studentId);
+    Call<GenericResponse<List<Booking>>>  getBookingList(@Query("StudentId") String studentId, @Query("Active") boolean active, @Query("Page") int page, @Query("PageSize") int pageSize);
+
+    @Headers("AppKey:123456")
+    @GET("workshop/booking/search")
+    Call<GenericResponse<List<Booking>>>  getBookingList(@Query("StudentId") String studentId, @Query("StartingDtBegin") Date StartingDtBegin, @Query("StartingDtEnd") Date StartingDtEnd, @Query("Page") int page, @Query("PageSize") int pageSize);
 
     @Headers("AppKey:123456")
     @GET("workshop/")
@@ -53,7 +57,7 @@ public interface HELPS_Service
 
     @Headers("AppKey:123456")
     @GET("workshop/search")
-    Call<GenericResponse<List<Workshop>>> searchWorkshops(@Query("CampusId") String CampusId, @Query("WorkshopSetId") String workshopSetId, @Query("StartingDtBegin") Date StartingDtBegin, @Query("StartingDtEnd") Date StartingDtEnd, @Query("Active") boolean active, @Query("Page") int page, @Query("PageSize") int pageSize);
+    Call<GenericResponse<List<Workshop>>> searchWorkshops(@Query("CampusId") String CampusId, @Query("WorkshopSetId") String workshopSetId, @Query("StartingDtBegin") String StartingDtBegin, @Query("StartingDtEnd") String StartingDtEnd, @Query("Active") boolean active, @Query("Page") int page, @Query("PageSize") int pageSize);
 
     @Headers("AppKey:123456")
     @GET("workshop/wait")
