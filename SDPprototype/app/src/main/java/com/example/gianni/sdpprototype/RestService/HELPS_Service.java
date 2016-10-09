@@ -7,6 +7,7 @@ import com.example.gianni.sdpprototype.Models.Workshop;
 import com.example.gianni.sdpprototype.Models.WorkshopSet;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.Responses.ResponseType;
+import com.example.gianni.sdpprototype.Responses.WaitingListResponse;
 
 import java.util.Date;
 import java.util.List;
@@ -54,6 +55,10 @@ public interface HELPS_Service
     @GET("workshop/search")
     Call<GenericResponse<List<Workshop>>> searchWorkshops(@Query("CampusId") String CampusId, @Query("WorkshopSetId") String workshopSetId, @Query("StartingDtBegin") Date StartingDtBegin, @Query("StartingDtEnd") Date StartingDtEnd, @Query("Active") boolean active, @Query("Page") int page, @Query("PageSize") int pageSize);
 
+    @Headers("AppKey:123456")
+    @GET("workshop/wait")
+    Call<WaitingListResponse> getIfWaiting(@Query("workshopid") int workshopId, @Query("studentid") String studentId);
+
     //POSTS
     @Headers({
             "AppKey:123456",
@@ -69,5 +74,9 @@ public interface HELPS_Service
     @Headers("AppKey:123456")
     @POST("workshop/booking/cancel")
     Call<ResponseType> cancelBooking(@Query("workshopId") int workshopId, @Query("studentId") String studentId, @Query("userId") int userId);
+
+    @Headers("AppKey:123456")
+    @POST("workshop/wait/create")
+    Call<ResponseType> createWaiting(@Query("workshopId") int workshopId, @Query("studentId") String studentId, @Query("userId") int userId);
 
 }

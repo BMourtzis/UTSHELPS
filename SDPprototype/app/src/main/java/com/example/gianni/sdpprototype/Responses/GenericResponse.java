@@ -8,7 +8,6 @@ public class GenericResponse<T>
 {
     private T Result;
     private Boolean IsSuccess;
-
     private String DisplayMessage;
 
     public String getDisplayMessage() {

@@ -16,11 +16,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.ContextMenu;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +25,9 @@ import com.example.gianni.sdpprototype.Fragments.AccountFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingListFragment;
 import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
-import com.example.gianni.sdpprototype.Fragments.FAQFragment;
+import com.example.gianni.sdpprototype.Fragments.FAQExamsFragment;
+import com.example.gianni.sdpprototype.Fragments.FAQMiscFragment;
+import com.example.gianni.sdpprototype.Fragments.FAQProgramFragment;
 import com.example.gianni.sdpprototype.Fragments.HistoryFragment;
 import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
 import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
@@ -46,8 +44,7 @@ public class MainActivity extends AppCompatActivity
     private IntentFilter[] mNdefExchangeFilters;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -65,25 +62,21 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+//        SharedPreferences sharedPrefs = getSharedPreferences("utshelps", Context.MODE_PRIVATE);
+//        String studentId = sharedPrefs.getString("studentId", "error");
+//
+//        TextView stid = (TextView) navigationView.findViewById(R.id.navigation_header_name);
+//        stid.setText(studentId);
+//
+//        TextView emailText = (TextView) findViewById(R.id.navigation_header_email);
+//        emailText.append(studentId,0,0);
+
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
         mNfcPendingIntent = PendingIntent.getActivity(this, 0, new Intent(this,
                 getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP), 0);
     }
-
-//    @Override
-//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
-//    {
-//        SharedPreferences sharedPrefs = getSharedPreferences("utshelps", Context.MODE_PRIVATE);
-//        String studentId = sharedPrefs.getString("studentId", "error");
-//
-//        TextView stid = (TextView) findViewById(R.id.navigation_header_name);
-//        stid.setText(studentId);
-//
-//        TextView emailText = (TextView) findViewById(R.id.navigation_header_email);
-//        emailText.append(studentId,0,0);
-//    }
 
     @Override
     protected void onResume() {
@@ -158,14 +151,20 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_account:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new AccountFragment()).commit();
                 break;
-            case R.id.nav_about:
+            case R.id.nav_other_drop:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new AboutFragment()).commit();
                 break;
             case R.id.nav_check_attendance:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendanceFragment()).commit();
                 break;
-            case R.id.nav_faq:
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new FAQFragment()).commit();
+            case R.id.nav_faq_program:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new FAQProgramFragment()).commit();
+                break;
+            case R.id.nav_faq_exam:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new FAQExamsFragment()).commit();
+                break;
+            case R.id.nav_faq_misc:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new FAQMiscFragment()).commit();
                 break;
         }
 

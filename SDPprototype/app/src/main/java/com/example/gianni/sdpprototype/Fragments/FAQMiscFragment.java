@@ -7,23 +7,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.gianni.sdpprototype.R;
 
 /**
- * Created by Vasil on 6/10/2016.
+ * Created by Vasil on 9/10/2016.
  */
 
-public class FAQFragment extends Fragment{
+public class FAQMiscFragment extends Fragment {
     View FAQView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        FAQView = inflater.inflate(R.layout.faq_layout, container, false);
+        FAQView = inflater.inflate(R.layout.faq_misc_layout, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_faq);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_faq_misc);
 
         return FAQView;
     }

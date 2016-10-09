@@ -2,7 +2,8 @@
     <string name="app_name">UTS HELPS</string>
 
     <string name="title_landing">Hi, Steve Jobs</string>
-    <string name="title_bookings">Home</string>
+    <string name="title_bookings">Bookings</string>
+    <string name="title_waiting_list">Waiting List</string>
     <string name="title_reminders">Notifications</string>
     <string name="title_upcoming_sessions">Upcoming Workshop</string>
     <string name="title_history">Booking History</string>
@@ -12,6 +13,7 @@
     <string name="title_workshop_details">Workshop Details</string>
     <string name="title_check_attendance">Check Attendance</string>
     <string name="title_faq">FAQ</string>
+    <string name="title_home">Home</string>
 
 
     <string name="title_button_book">Book Workshop</string>
@@ -68,27 +70,99 @@
     <string name="title_faq_helps_program_question_pronunciation">Can you help me with my pronunciation?</string>
     <string name="title_faq_helps_program_question_presentation">Can I practise my seminar presentation with someone?</string>
 
-    <string name="title_faq_helps_program_answer_use">Any student enrolled in any faculty at UTS, and all members of UTS staff
-</string>
-    <string name="title_faq_helps_program_answer_where">HELPS is located on Building 1, Level 3 , room 8 (opposite the Careers service)
-</string>
-    <string name="title_faq_helps_program_answer_cost">Services are free of tuition fees for non-credit workshops and individual consultations.
-</string>
-    <string name="title_faq_helps_program_answer_assignment">Yes. HELPS offers various workshops and individual consultations. See our variety of programs for extra assistance under ‘Other Programs’
-</string>
-    <string name="title_faq_helps_program_answer_c_assignment">No. Our role is not to correct grammar or other errors in an assignment. We can help you develop your own editing strategies. You should also use a computer spell-check, find a competent friend and a good dictionary.
-</string>
-    <string name="title_faq_helps_program_answer_h_assignment">No. We can’t tell you what to say, we can only help you say it better and more clearly. While we’re happy to act as a sounding board for your ideas, content questions require the specialised disciplinary knowledge of lecturers and tutors in your faculty. You should take specific content questions directly to them.
-</string>
-    <string name="title_faq_helps_program_answer_grammar">Yes. You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
-</string>
-    <string name="title_faq_helps_program_answer_pronunciation">Yes.  You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
-</string>
-    <string name="title_faq_helps_program_answer_presentation">Yes. You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
-</string>
+    <string name="title_faq_helps_program_answer_use">Any student enrolled in any faculty at UTS, and all members of UTS staff</string>
+    <string name="title_faq_helps_program_answer_where">HELPS is located on Building 1, Level 3 , room 8 (opposite the Careers service)</string>
+    <string name="title_faq_helps_program_answer_cost">Services are free of tuition fees for non-credit workshops and individual consultations.</string>
+    <string name="title_faq_helps_program_answer_assignment">
+        Yes. HELPS offers various workshops and individual consultations. See our variety of programs for extra assistance under ‘Other Programs’
+    </string>
+    <string name="title_faq_helps_program_answer_c_assignment">
+        No. Our role is not to correct grammar or other errors in an assignment. We can help you develop your own editing strategies. You should also use a computer spell-check, find a competent friend and a good dictionary.
+    </string>
+    <string name="title_faq_helps_program_answer_h_assignment">
+        No. We can’t tell you what to say, we can only help you say it better and more clearly. While we’re happy to act as a sounding board for your ideas, content questions require the specialised disciplinary knowledge of lecturers and tutors in your faculty. You should take specific content questions directly to them.
+    </string>
+    <string name="title_faq_helps_program_answer_grammar">
+        Yes. You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
+    </string>
+    <string name="title_faq_helps_program_answer_pronunciation">
+        Yes.  You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
+    </string>
+    <string name="title_faq_helps_program_answer_presentation">
+        Yes. You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
+    </string>
 
     <string name="title_faq_exam">Exam Special Conditions</string>
+    <string name="title_faq_exam_native_question">I am not a native English speaker and I feel that I need more time in exams. Can you help?</string>
+    <string name="title_faq_exam_special_question">I\'m a second/third year student. Can I get Special Conditions in my exams?</string>
+    <string name="title_faq_exam_deadline_question">What is the deadline to apply for the Special Conditions?</string>
+    <string name="title_faq_exam_apply_question">How so I apply for Special Conditions in Exams?</string>
+
+    <string name="title_faq_exam_native_answer">It depends. You might be eligible to apply for Special Conditions in Exams.</string>
+    <string name="title_faq_exam_special_answer">No. Only first year (1st/2nd semester) students are eligible to apply.</string>
+    <string name="title_faq_exam_deadline_answer">The applications close on the Census date</string>
+    <string name="title_faq_exam_apply_answer">You would need to fill out an application form and submit it to the HELPS office (CB01.05.205). The application form and more can be found here.</string>
 
     <string name="title_faq_misc">Miscellaneous</string>
+    <string name="title_faq_misc_what_question">What is HELPS?</string>
+    <string name="title_faq_misc_consider_question">Why should I consider using HELPS?</string>
+    <string name="title_faq_misc_office_question">Where is your main office located?</string>
+    <string name="title_faq_misc_team_question">I\'m interested in being part of the HELPS team. Can I sign up  in any way?</string>
+    <string name="title_faq_misc_help_question">My question isn\'t answered here. Can someone help me out?</string>
+
+    <string name="title_faq_misc_what_answer">
+        Higher Education Language and Presentation Support (HELPS) provides non-credited English language and academic literacy support for UTS undergraduate and postgraduate coursework students
+    </string>
+    <string name="title_faq_misc_consider_answer">
+        HELPS can enhance your learning experience by providing individual and group support in a friendly and respectful environment.
+        We can help you become an independent and confident learner through the development of your English language and academic understanding, so you can each your study and career goals.
+    </string>
+    <string name="title_faq_misc_office_answer">We are located on the Ultimo camps of UTS in Building 1, Level 5, Room 25 (CB01.05.205)</string>
+    <string name="title_faq_misc_team_answer">
+        UTS students, staff, alumni and community ca provide volunteer support for HELPS, ranging in roles from Peer Advisors, Conversation Leaders, to being part of a Buddy Program.
+        The application form and ore information can be found here.
+    </string>
+    <string name="title_faq_misc_help_answer">
+        You can either visit out HELPS Office(CB01.05.205), email us at HELPS@uts.edu.au, or send a message through out Facebook page and ask us anything.
+    </string>
     
+    <string name="title_other_drop_in">Drop-in Consultations</string>
+    <string name="title_other_drop_in_text">
+        We offer 15-minute drop-on advice sessions and 40-minute one-to-one consultations by referral to help you with your assignment writing and preparation.
+        Drop-in consultations are held at:
+        2016 Spring Semester (Not offered on Public Holidays)
+        HELPS office (CB01.05.25)
+        Monday to Thursday: 12noon - 6pm / Friday: 12noon - 5pm
+        UTS Blake Library (Research helpdesk)
+        Monday to Thursday: 4pm - 7pm / Saturday: 1pm - 4pm
+        Building 10 Foyer (Pod 1)
+        Monday to Thursday: 10am - 1pm
+        At the initial stage of your assignment writing or preparation process, you are strongly encouraged to come and see HELPS. The best time to see us is when you first receive your assignment.
+        HELPS Advisors can help edit your assignment WITH you, not FOR you - helping you to edit for:
+        Structure and argument – that your writing is logically organised with well-developed and well-supported arguments.
+        Style and expression – that your choice of vocabulary is appropriate, sentences are well constructed, ideas are clearly introduced, and paragraphs are fully developed.
+        Grammar – that your issues are identified and explained so you can learn from your mistakes and avoid making them in the future.
+        Proof reading is the final step in the editing process, with the aim of producing an error-free assignment. It is your responsibility to check for mistakes in spelling, punctuation, typing and formatting in your assignment before you submit it to your lecturer.
+        For more information, go to this website.
+    </string>
+
+    <string name="title_other_one">One-on-one Consultations</string>
+    <string name="title_other_one_text">
+        After you have attended a drop-in advice session; if a longer consultation is required, you may be able to book in for a 40-minute one-to-one consultation.
+        Having a one-to-one consultation is an opportunity for an in-depth discussion in relation to your specific need on an assessment.
+        One-on-one consultations can commonly consist of:
+        Discussing your draft to ensure that you have addressed the assessment criteria
+        Addressing a number of grammar or referencing issues that require assistance
+        Preparing for an oral presentation.
+        For more information, go to this website.
+    </string>
+
+    <string name="title_other_workshops">Daily Workshops</string>
+    <string name="title_other_workshops_text">
+        Students are required to book for upcoming daily workshops, as places are limited. You can book these workshops via this app.
+        You can cancel your workshop by pressing on you booking workshop under \'Home\', and press \'Cancel Booking\'./n/n
+        If bookings are no longer available, student can reserve a spot on the Waiting List as places may become available as it gets closer to the workshop time.
+        You will not be penalised if you so not cancel your Waiting List reservation after the workshop time./n/n
+        Failing to turn up for your registered workshops are not fair to those on the waiting lists. Repeat offenders may be barred from attending workshops for the rest of the semester.
+    </string>
 </resources>
