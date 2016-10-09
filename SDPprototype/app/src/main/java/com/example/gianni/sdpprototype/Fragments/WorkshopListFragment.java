@@ -45,20 +45,6 @@ public class WorkshopListFragment extends ListFragment {
 
         int id = args.getInt("id");
 
-//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//
-//        Date StartingDate = new Date();
-//        Date EndingDate = new Date();
-//
-//        try
-//        {
-//            StartingDate = sdf.parse("09/10/2015");
-//        }
-//        catch(Exception e)
-//        {
-//
-//        }
-
         RestClient client = new RestClient();
         Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id, "09/10/2015", "09/10/2016", true, currectPage, 20);
         currectPage++;

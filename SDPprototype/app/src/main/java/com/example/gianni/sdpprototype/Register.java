@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.gianni.sdpprototype.Models.Student;
+import com.example.gianni.sdpprototype.Models.StudentReg;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.Responses.ResponseType;
 import com.example.gianni.sdpprototype.RestService.RestClient;
@@ -41,7 +42,7 @@ public class Register extends AppCompatActivity {
                 EditText langText = (EditText) findViewById(R.id.register_lang_edit);
                 EditText countryText = (EditText) findViewById(R.id.register_country_edit);
 
-                Student student = new Student(studentIdText.getText().toString(), dobText.getText().toString(), nameText.getText().toString(), degreeText.getText().toString(), genderText.getText().toString(), statusText.getText().toString(), langText.getText().toString(), countryText.getText().toString(), 1);
+                StudentReg student = new StudentReg(studentIdText.getText().toString(), dobText.getText().toString(), nameText.getText().toString(), degreeText.getText().toString(), genderText.getText().toString(), statusText.getText().toString(), langText.getText().toString(), countryText.getText().toString(), 1);
 
                 RestClient client = new RestClient();
                 Call<ResponseType> call = client.getHelpsService().registerStudent(student);

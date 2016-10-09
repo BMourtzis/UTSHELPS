@@ -31,6 +31,7 @@ import com.example.gianni.sdpprototype.Fragments.FAQProgramFragment;
 import com.example.gianni.sdpprototype.Fragments.HistoryFragment;
 import com.example.gianni.sdpprototype.Fragments.RemindersFragment;
 import com.example.gianni.sdpprototype.Fragments.UpcomingSessionsFragment;
+import com.example.gianni.sdpprototype.Fragments.UpdateStudentFragment;
 import com.example.gianni.sdpprototype.Fragments.WorkshopFragment;
 import com.example.gianni.sdpprototype.Fragments.WorkshopListFragment;
 import com.example.gianni.sdpprototype.Fragments.WorkshopSearchFragment;
@@ -230,6 +231,24 @@ public class MainActivity extends AppCompatActivity
         args.putString("StartBegin", StartingBegin);
         args.putString("StartEnd", StartingEnd);
         fragment.setArguments(args);
+
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+    }
+
+    @Override
+    public void onUpdateStudent() {
+        FragmentManager fragmentManager = getFragmentManager();
+
+        UpdateStudentFragment fragment = new UpdateStudentFragment();
+
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+    }
+
+    @Override
+    public void StudentUpdated() {
+        FragmentManager fragmentManager = getFragmentManager();
+
+        AccountFragment fragment = new AccountFragment();
 
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
     }

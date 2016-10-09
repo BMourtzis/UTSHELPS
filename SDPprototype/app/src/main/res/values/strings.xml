@@ -14,7 +14,7 @@
     <string name="title_check_attendance">Check Attendance</string>
     <string name="title_faq">FAQ</string>
     <string name="title_home">Home</string>
-
+    <string name="title_update_student">Update Student</string>
 
     <string name="title_button_book">Book Workshop</string>
     <string name="title_button_cancel_booking">Cancel Booking</string>

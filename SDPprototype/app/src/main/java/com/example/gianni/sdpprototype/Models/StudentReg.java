@@ -1,31 +1,28 @@
 package com.example.gianni.sdpprototype.Models;
 
-
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by Vasil on 24/9/2016.
+ * Created by Vasil on 9/10/2016.
  */
 
-
-public class Student
-{
+public class StudentReg {
     @SerializedName("studentID")
     private String studentID;
-    @SerializedName("dob")
-    private String dob;
-    @SerializedName("gender")
-    private String gender;
-    @SerializedName("degree")
-    private String degree;
-    @SerializedName("status")
-    private String status;
-    @SerializedName("first_language")
-    private String first_language;
-    @SerializedName("country_origin")
-    private String country_origin;
-    @SerializedName("background")
-    private String background;
+    @SerializedName("DateOfBirth")
+    private String DateOfBirth;
+    @SerializedName("Gender")
+    private String Gender;
+    @SerializedName("Degree")
+    private String Degree;
+    @SerializedName("Status")
+    private String Status;
+    @SerializedName("FirstLanguage")
+    private String FirstLanguage;
+    @SerializedName("CountryOrigin")
+    private String CountryOrigin;
+    @SerializedName("Background")
+    private String Background;
     @SerializedName("HSC")
     private boolean HSC;
     @SerializedName("HSC_mark")
@@ -62,28 +59,28 @@ public class Student
     private String created;
     @SerializedName("creatorID")
     private Integer creatorID;
-    @SerializedName("degree_details")
-    private String degreeDetails;
-    @SerializedName("alternative_contact")
-    private String alternativeContact;
-    @SerializedName("preferred_name")
-    private String preferredName;
+    @SerializedName("DegreeDetails")
+    private String DegreeDetails;
+    @SerializedName("AltContact")
+    private String AltContact;
+    @SerializedName("PreferredName")
+    private String PreferredName;
 
     /**
      * Empty constructor, used by the ORM
      */
-    public Student(){ }
+    public StudentReg(){ }
 
-    public Student(String studentID, String dob, String prefname, String deg, String gender, String status, String lang, String country, int creator)
+    public StudentReg(String studentID, String dob, String prefname, String deg, String gender, String status, String lang, String country, int creator)
     {
         this.studentID = studentID;
-        this.dob = dob;
-        this.preferredName = prefname;
-        this.degree = deg;
-        this.gender = gender;
-        this.status =  status;
-        this.first_language = lang;
-        this.country_origin = country;
+        this.DateOfBirth = dob;
+        this.PreferredName = prefname;
+        this.Degree = deg;
+        this.Gender = gender;
+        this.Status =  status;
+        this.FirstLanguage = lang;
+        this.CountryOrigin = country;
         this.creatorID = creator;
     }
 
@@ -112,7 +109,7 @@ public class Student
      * The dob
      */
     public String getDob() {
-        return dob;
+        return DateOfBirth;
     }
 
     /**
@@ -121,7 +118,7 @@ public class Student
      * The dob
      */
     public void setDob(String dob) {
-        this.dob = dob;
+        this.DateOfBirth = dob;
     }
 
     /**
@@ -130,7 +127,7 @@ public class Student
      * The gender
      */
     public String getGender() {
-        return gender;
+        return Gender;
     }
 
     /**
@@ -139,7 +136,7 @@ public class Student
      * The gender
      */
     public void setGender(String gender) {
-        this.gender = gender;
+        this.Gender = gender;
     }
 
     /**
@@ -148,7 +145,7 @@ public class Student
      * The degree
      */
     public String getDegree() {
-        return degree;
+        return Degree;
     }
 
     /**
@@ -157,7 +154,7 @@ public class Student
      * The degree
      */
     public void setDegree(String degree) {
-        this.degree = degree;
+        this.Degree = degree;
     }
 
     /**
@@ -166,7 +163,7 @@ public class Student
      * The status
      */
     public String getStatus() {
-        return status;
+        return Status;
     }
 
     /**
@@ -175,7 +172,7 @@ public class Student
      * The status
      */
     public void setStatus(String status) {
-        this.status = status;
+        this.Status = status;
     }
 
     /**
@@ -184,7 +181,7 @@ public class Student
      * The firstLanguage
      */
     public String getFirstLanguage() {
-        return first_language;
+        return FirstLanguage;
     }
 
     /**
@@ -193,7 +190,7 @@ public class Student
      * The first_language
      */
     public void setFirstLanguage(String firstLanguage) {
-        this.first_language = firstLanguage;
+        this.FirstLanguage = firstLanguage;
     }
 
     /**
@@ -202,7 +199,7 @@ public class Student
      * The countryOrigin
      */
     public String getCountry_origin() {
-        return country_origin;
+        return CountryOrigin;
     }
 
     /**
@@ -211,7 +208,7 @@ public class Student
      * The country_origin
      */
     public void setCountry_origin(String country_origin) {
-        this.country_origin = country_origin;
+        this.CountryOrigin = country_origin;
     }
 
     /**
@@ -220,7 +217,7 @@ public class Student
      * The background
      */
     public String getBackground() {
-        return background;
+        return Background;
     }
 
     /**
@@ -229,7 +226,7 @@ public class Student
      * The background
      */
     public void setBackground(String background) {
-        this.background = background;
+        this.Background = background;
     }
 
     /**
@@ -562,7 +559,7 @@ public class Student
      * The degreeDetails
      */
     public String getDegreeDetails() {
-        return degreeDetails;
+        return DegreeDetails;
     }
 
     /**
@@ -571,7 +568,7 @@ public class Student
      * The degree_details
      */
     public void setDegreeDetails(String degreeDetails) {
-        this.degreeDetails = degreeDetails;
+        this.DegreeDetails = degreeDetails;
     }
 
     /**
@@ -580,7 +577,7 @@ public class Student
      * The alternativeContact
      */
     public String getAlternativeContact() {
-        return alternativeContact;
+        return AltContact;
     }
 
     /**
@@ -589,7 +586,7 @@ public class Student
      * The alternative_contact
      */
     public void setAlternativeContact(String alternativeContact) {
-        this.alternativeContact = alternativeContact;
+        this.AltContact = alternativeContact;
     }
 
     /**
@@ -598,7 +595,7 @@ public class Student
      * The preferredName
      */
     public String getPreferredName() {
-        return preferredName;
+        return PreferredName;
     }
 
     /**
@@ -607,6 +604,6 @@ public class Student
      * The preferred_name
      */
     public void setPreferredName(String preferredName) {
-        this.preferredName = preferredName;
+        this.PreferredName = preferredName;
     }
 }

@@ -3,6 +3,7 @@ package com.example.gianni.sdpprototype.RestService;
 import com.example.gianni.sdpprototype.Models.Booking;
 import com.example.gianni.sdpprototype.Models.Campus;
 import com.example.gianni.sdpprototype.Models.Student;
+import com.example.gianni.sdpprototype.Models.StudentReg;
 import com.example.gianni.sdpprototype.Models.Workshop;
 import com.example.gianni.sdpprototype.Models.WorkshopSet;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
@@ -69,7 +70,7 @@ public interface HELPS_Service
             "Content-Type:application/json"
     })
     @POST("student/register")
-    Call<ResponseType> registerStudent(@Body Student student);
+    Call<ResponseType> registerStudent(@Body StudentReg student);
 
     @Headers("AppKey:123456")
     @POST("workshop/booking/create")
