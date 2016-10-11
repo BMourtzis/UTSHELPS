@@ -1,7 +1,9 @@
 package com.example.gianni.sdpprototype.Fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,8 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.gianni.sdpprototype.FragmentCallback;
+import com.example.gianni.sdpprototype.LoginActivity;
 import com.example.gianni.sdpprototype.Models.Student;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
@@ -24,7 +29,7 @@ import retrofit2.Response;
  * Created by Gianni on 7/09/2016.
  */
 public class AccountFragment extends Fragment {
-
+    FragmentCallback mCallback;
     View accountView;
 
     @Nullable
@@ -67,6 +72,43 @@ public class AccountFragment extends Fragment {
             }
         });
 
+        Button updateButton = (Button) accountView.findViewById(R.id.account_button_update);
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCallback.onUpdateStudent();
+            }
+        });
+
+        Button logoutButton = (Button) accountView.findViewById(R.id.account_button_logout);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sharedPrefs = getActivity().getSharedPreferences("utshelps", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPrefs.edit();
+                editor.remove("studentId");
+                editor.commit();
+
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
         return accountView;
+    }
+
+    @Override
+    public void onAttach(Activity activity)
+    {
+        super.onAttach(activity);
+        try
+        {
+            mCallback = (FragmentCallback) activity;
+        }
+        catch(ClassCastException e)
+        {
+            throw new ClassCastException(activity.toString() + "must implement");
+        }
     }
 }

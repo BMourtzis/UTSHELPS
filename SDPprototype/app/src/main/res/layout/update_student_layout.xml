@@ -9,30 +9,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:textSize="30dp"
-                android:text="@string/register_form_label"
-                android:id="@+id/register_label"/>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_studentId"
-                android:layout_below="@+id/register_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:hint="@string/prompt_studentId"
-                    android:id="@+id/register_id_edit" />
-
-            </android.support.design.widget.TextInputLayout>
+            android:layout_height="wrap_content">
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_pref_name"
@@ -144,8 +121,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/til_origin_country"
-                android:text="@string/register_button"
-                android:id="@+id/create_account_button"
+                android:text="@string/title_update_student"
+                android:id="@+id/update_button"
                 android:layout_alignParentBottom="true" />
 
         </RelativeLayout>

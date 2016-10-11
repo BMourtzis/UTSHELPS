@@ -7,9 +7,17 @@ import com.example.gianni.sdpprototype.Models.Booking;
  */
 public interface FragmentCallback {
 
-    public void onBookingItemSelected(Booking booking);
+    void onBookingItemSelected(Booking booking);
 
-    public void onWorkshopSetItemSelected(int id);
+    void onWorkshopSetItemSelected(int id);
 
-    public void onWorkshopItemSelected(int id);
+    void onWorkshopItemSelected(int id);
+
+    void onWorkshopSearchIconSelected();
+
+    void onSearchWorkshops(int campusId, int wsId, String StartingBegin, String StartingEnd);
+
+    void onUpdateStudent();
+
+    void StudentUpdated();
 }

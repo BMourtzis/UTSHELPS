@@ -10,6 +10,10 @@ public class WorkshopSet
     private String name;
     private Object archived;
 
+    public WorkshopSet(String name) {
+        this.name = name;
+    }
+
     /**
      *
      * @return
@@ -62,5 +66,11 @@ public class WorkshopSet
      */
     public void setArchived(Object archived) {
         this.archived = archived;
+    }
+
+    @Override
+    public String toString()
+    {
+        return name;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.gianni.sdpprototype.Fragments;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,27 +28,43 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by Vasil on 28/9/2016.
+ * Created by Vasil on 8/10/2016.
  */
 
-public class WorkshopListFragment extends ListFragment {
+public class WorkshopSearchResultFragment extends ListFragment {
     FragmentCallback mCallback;
-    View upcomingSessions;
+    View searchResultView;
     ArrayList<Workshop> items;
-    int currectPage = 1;
+    int page;
+    final int pageSize = 20;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
+        page = 1;
         Bundle args = getArguments();
 
-        int id = args.getInt("id");
+        int cId = args.getInt("campusId");
+        int wsId = args.getInt("wsId");
+        String startBegin = args.getString("StartBegin", "");
+        String startEnd = args.getString("StartEnd", "");
+
+        String CampusId = "";
+        String WorkshopId = "";
+
+        if(cId != 0)
+        {
+            CampusId = Integer.toString(cId);
+        }
+
+        if(wsId != 0)
+        {
+            WorkshopId = Integer.toString(wsId);
+        }
 
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id, "09/10/2015", "09/10/2016", true, currectPage, 20);
-        currectPage++;
+        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().searchWorkshops(CampusId, WorkshopId, startBegin, startEnd, true, ++page, pageSize);
 
         call.enqueue(new Callback<GenericResponse<List<Workshop>>>() {
             @Override
@@ -90,10 +107,10 @@ public class WorkshopListFragment extends ListFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        upcomingSessions = inflater.inflate(R.layout.upcoming_sessions, container, false);
+        searchResultView = inflater.inflate(R.layout.workshop_search_result_layout, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_upcoming_sessions);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.search_result_title);
 
-        return upcomingSessions;
+        return searchResultView;
     }
 }

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res-auto">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_bookings"
             android:icon="@drawable/home_icon"
             android:title="@string/title_bookings" />
+        <item
+            android:id="@+id/nav_waiting"
+            android:title="@string/title_waiting_list"/>
         <item
             android:id="@+id/nav_upcoming_sessions"
             android:icon="@drawable/upcoming_workshop"
@@ -22,6 +27,7 @@
             android:id="@+id/nav_account"
             android:icon="@drawable/profile_icon"
             android:title="@string/title_account" />
+
         <item
             android:id="@+id/nav_workshop_details"
             android:visible="false"
@@ -36,17 +42,36 @@
             android:title="CheckAttendance" />
     </group>
 
-    <item android:title="Additional Information">
+    <item android:title="@string/title_faq">
         <menu>
             <item
-                android:id="@+id/nav_faq"
-                android:icon="@drawable/faq_icon"
-                android:title="@string/title_faq" />
+                android:id="@+id/nav_faq_program"
+                android:title="@string/title_faq_helps_program" />
 
             <item
-                android:id="@+id/nav_about"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/title_about" />
+                android:id="@+id/nav_faq_exam"
+                android:title="@string/title_faq_exam" />
+
+            <item
+                android:id="@+id/nav_faq_misc"
+                android:title="@string/title_faq_misc" />
+
+        </menu>
+    </item>
+
+    <item android:title="@string/title_about">
+        <menu>
+            <item
+                android:id="@+id/nav_other_drop"
+                android:title="@string/title_other_drop_in" />
+
+            <item
+                android:id="@+id/nav_other_one"
+                android:title="@string/title_other_one" />
+
+            <item
+                android:id="@+id/nav_other_daily"
+                android:title="@string/title_other_workshops" />
 
         </menu>
     </item>

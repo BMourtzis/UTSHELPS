@@ -45,6 +45,19 @@
             android:layout_height="wrap_content"
             android:text="Test" />
 
+        <TextView android:id="@+id/workshop_details_label_target"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Targeting Group: " />
+
+        <TextView android:id="@+id/workshop_details_value_target"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test" />
+
         <TextView android:id="@+id/workshop_details_label_description"
             android:textSize="20sp"
             android:textStyle="bold"
