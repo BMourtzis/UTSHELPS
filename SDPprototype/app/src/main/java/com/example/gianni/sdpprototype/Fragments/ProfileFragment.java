@@ -23,7 +23,7 @@ import retrofit2.Response;
 /**
  * Created by Gianni on 7/09/2016.
  */
-public class AccountFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     View accountView;
 
@@ -31,7 +31,7 @@ public class AccountFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        accountView = inflater.inflate(R.layout.account, container, false);
+        accountView = inflater.inflate(R.layout.profile, container, false);
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_account);
 
@@ -47,16 +47,16 @@ public class AccountFragment extends Fragment {
             {
                 Student student = response.body().getResult();
 
-                TextView idText = (TextView) accountView.findViewById(R.id.account_id_value);
+                TextView idText = (TextView) accountView.findViewById(R.id.student_id);
                 idText.setText(student.getStudentID());
 
-                TextView genderText = (TextView) accountView.findViewById(R.id.account_gender_value);
+                TextView genderText = (TextView) accountView.findViewById(R.id.gender);
                 genderText.setText(student.getGender());
 
-                TextView degreeText = (TextView) accountView.findViewById(R.id.account_degree_value);
+                TextView degreeText = (TextView) accountView.findViewById(R.id.degree);
                 degreeText.setText(student.getDegree());
 
-                TextView statusText = (TextView) accountView.findViewById(R.id.account_status_value);
+                TextView statusText = (TextView) accountView.findViewById(R.id.status);
                 statusText.setText(student.getStatus());
             }
 

@@ -2,10 +2,8 @@ package com.example.gianni.sdpprototype;
 
 import android.app.FragmentManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
@@ -16,16 +14,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.ContextMenu;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gianni.sdpprototype.Fragments.AboutFragment;
-import com.example.gianni.sdpprototype.Fragments.AccountFragment;
+import com.example.gianni.sdpprototype.Fragments.ProfileFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingListFragment;
 import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
@@ -153,7 +146,7 @@ public class MainActivity extends AppCompatActivity
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new HistoryFragment()).commit();
                 break;
             case R.id.nav_account:
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new AccountFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new ProfileFragment()).commit();
                 break;
             case R.id.nav_about:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new AboutFragment()).commit();

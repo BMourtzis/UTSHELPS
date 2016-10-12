@@ -1,7 +1,6 @@
 package com.example.gianni.sdpprototype.Fragments;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.ListFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,7 +15,6 @@ import android.widget.ListView;
 import com.example.gianni.sdpprototype.Adapters.BookingListAdapter;
 import com.example.gianni.sdpprototype.FragmentCallback;
 import com.example.gianni.sdpprototype.Models.Booking;
-import com.example.gianni.sdpprototype.Models.WorkshopSet;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
@@ -104,7 +102,7 @@ public class BookingListFragment extends ListFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        bookingsView = inflater.inflate(R.layout.bookings, container, false);
+        bookingsView = inflater.inflate(R.layout.home, container, false);
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_bookings);
         return bookingsView;

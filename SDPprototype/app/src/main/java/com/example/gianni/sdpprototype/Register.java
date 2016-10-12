@@ -30,14 +30,14 @@ public class Register extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText studentIdText = (EditText) findViewById(R.id.register_id_edit);
-                EditText dobText = (EditText) findViewById(R.id.register_dob_edit);
-                EditText nameText = (EditText) findViewById(R.id.register_name_edit);
-                EditText genderText = (EditText) findViewById(R.id.register_gender_edit);
-                EditText degreeText = (EditText) findViewById(R.id.register_degree_edit);
-                EditText statusText = (EditText) findViewById(R.id.register_status_edit);
-                EditText langText = (EditText) findViewById(R.id.register_lang_edit);
-                EditText countryText = (EditText) findViewById(R.id.register_country_edit);
+                EditText studentIdText = (EditText) findViewById(R.id.student_id);
+                EditText dobText = (EditText) findViewById(R.id.date_of_birth);
+                EditText nameText = (EditText) findViewById(R.id.preffered_name);
+                EditText genderText = (EditText) findViewById(R.id.gender);
+                EditText degreeText = (EditText) findViewById(R.id.degree);
+                EditText statusText = (EditText) findViewById(R.id.status);
+                EditText langText = (EditText) findViewById(R.id.first_language);
+                EditText countryText = (EditText) findViewById(R.id.country_of_origin);
 
                 Student student = new Student(studentIdText.toString(), dobText.toString(), nameText.toString(), degreeText.toString(), genderText.toString(), statusText.toString(), langText.toString(), countryText.toString(), 1);
 

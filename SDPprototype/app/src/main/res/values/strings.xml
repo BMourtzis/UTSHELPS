@@ -23,13 +23,26 @@
     <string name="title_activity_login">Sign in</string>
     <string name="navigation_email_ending">\@student.uts.edu.au</string>
 
+    <!--Registration-->
+    <string name="preffered_name">Preferred Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="first_language">First Language</string>
+    <string name="country_of_origin">Country of Origin</string>
+
+    <!--Profile-->
+    <string name="student_id">Student ID </string>
+    <string name="gender">Gender </string>
+    <string name="degree">Degree </string>
+    <string name="status">Status </string>
+
     <!-- Strings related to login -->
-    <string name="prompt_email">StudentID</string>
+    <string name="prompt_student_id">StudentID</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_register">Register</string>
+    <string name="action_sign_in">SIGN IN</string>
+    <string name="action_register">REGISTER</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This studentID is invalid</string>
+    <string name="question">First time using HELPS?</string>
+    <string name="error_invalid_student_id">This studentID is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>

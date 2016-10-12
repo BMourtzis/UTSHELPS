@@ -1,88 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/notifications_background">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Today"
-        android:id="@+id/textView2" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/textView2"/>
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center_horizontal"
+        android:text="TODAY"
+        android:id="@+id/today_heading" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:text="Your workshop &apos;Understanding Turnitin&apos; is about to begin"
-        android:layout_below="@+id/textView2"
-        android:id="@+id/textView3" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/textView3"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text="Your workshop 'Understanding Turnitin' is about to begin"
+        android:id="@+id/sample_reminder_one"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="&apos;Understanding Turnitin&apos; starts at 2pm today"
-        android:layout_below="@+id/textView3"
-        android:id="@+id/textView4" />
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorOpaqueButtonBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorAccentHighlight"/>
+
+    <TextView
+        android:text="'Understanding Turnitin' starts at 2pm today"
+        android:id="@+id/sample_reminder_two"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorOpaqueButtonBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="10dp"
+        android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Last Week"
-        android:id="@+id/textView5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/textView4" />
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center_horizontal"
+        android:text="LAST WEEK"
+        android:id="@+id/last_week_heading" />
+
+    <TextView
+        android:text="You were absent from your 'Presentation Skills' workshop today"
+        android:id="@+id/sample_reminder_three"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorOpaqueButtonBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:id="@+id/view2"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorAccentHighlight"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text="'Presentation Skills' starts at 11am today"
+        android:id="@+id/sample_reminder_four"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="You were absent from your &apos;Presentation Skills&apos; workshop today"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/view2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorOpaqueButtonBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:id="@+id/view"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorAccentHighlight"/>
+
+    <TextView
+        android:text="'Presentation Skills' starts at 11am today"
+        android:id="@+id/sample_reminder_five"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorOpaqueButtonBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center_horizontal"
+        android:text="LAST MONTH"
+        android:id="@+id/last_month_heading" />
+
+    <TextView
+        android:text="You were absent from your 'Presentation Skills' workshop today"
+        android:id="@+id/sample_reminder_six"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="&apos;Presentation Skills&apos; starts at 11am today"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/view"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-</RelativeLayout>
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorOpaqueButtonBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorAccentHighlight"/>
+
+    <TextView
+        android:text="'Presentation Skills' starts at 11am today"
+        android:id="@+id/sample_reminder_seven"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorOpaqueButtonBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+</ScrollView>
