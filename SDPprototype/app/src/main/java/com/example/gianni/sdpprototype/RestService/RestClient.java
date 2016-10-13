@@ -1,5 +1,7 @@
 package com.example.gianni.sdpprototype.RestService;
 
+import com.example.gianni.sdpprototype.Constants;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -13,7 +15,7 @@ public class RestClient
     public RestClient()
     {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://40.126.224.186/api/")
+                .baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

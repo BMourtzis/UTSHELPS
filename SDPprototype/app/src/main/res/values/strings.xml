@@ -51,11 +51,6 @@
     <string name="prompt_origin_country">Country of Origin</string>
     <string name="register_button">Create Account</string>
     <string name="register_form_label">Register Form</string>
-
-
-    <!--Strings related ro login-->
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_register">Register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="question">First time using HELPS?</string>
     <string name="error_invalid_student_id">This studentID is invalid</string>

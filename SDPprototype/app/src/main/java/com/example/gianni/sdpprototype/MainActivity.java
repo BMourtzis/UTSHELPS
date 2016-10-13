@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gianni.sdpprototype.Fragments.AboutFragment;
+import com.example.gianni.sdpprototype.Fragments.AccountFragment;
 import com.example.gianni.sdpprototype.Fragments.ProfileFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingListFragment;
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new HistoryFragment()).commit();
                 break;
             case R.id.nav_account:
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new ProfileFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new AccountFragment()).commit();
                 break;
             case R.id.nav_other_drop:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new AboutFragment()).commit();
