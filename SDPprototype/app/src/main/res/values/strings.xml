@@ -32,10 +32,10 @@
     <string name="country_of_origin">Country of Origin</string>
 
     <!--Profile-->
-    <string name="student_id">Student ID </string>
-    <string name="gender">Gender </string>
-    <string name="degree">Degree </string>
-    <string name="status">Status </string>
+    <string name="student_id">Student ID: </string>
+    <string name="gender">Gender: </string>
+    <string name="degree">Degree: </string>
+    <string name="status">Status: </string>
 
     <!-- Strings related to login -->
     <string name="prompt_student_id">StudentID</string>

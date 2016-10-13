@@ -12,7 +12,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
             android:text="MAKE A BOOKING"
             android:id="@+id/workshop_list_heading"
             android:layout_gravity="center_horizontal" />
@@ -32,25 +33,38 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Campus: " />
+            android:text="Campus: "
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccentHighlight"/>
 
         <TextView android:id="@+id/workshop_details_value_campus"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Test" />
+            android:text="Test"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"/>
 
         <TextView android:id="@+id/workshop_details_label_starting"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Starting Date: " />
+            android:text="Starting Date: "
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccentHighlight"/>
 
         <TextView android:id="@+id/workshop_details_value_starting"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
             android:text="Test" />
 
         <TextView android:id="@+id/workshop_details_label_ending"
@@ -58,12 +72,18 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccentHighlight"
             android:text="Ending Date: " />
 
         <TextView android:id="@+id/workshop_details_value_ending"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
             android:text="Test" />
 
         <TextView android:id="@+id/workshop_details_label_target"
@@ -71,12 +91,18 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccentHighlight"
             android:text="Targeting Group: " />
 
         <TextView android:id="@+id/workshop_details_value_target"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
             android:text="Test" />
 
         <TextView android:id="@+id/workshop_details_label_description"
@@ -84,12 +110,18 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccentHighlight"
             android:text="Description: " />
 
         <TextView android:id="@+id/workshop_details_value_description"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
             android:text="Test" />
 
         <Button

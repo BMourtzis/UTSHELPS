@@ -1,118 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/account_background"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Student Id: "
-        android:id="@+id/account_id_label" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_toRightOf="@id/account_id_label"
-        android:text=""
-        android:id="@+id/account_id_value" />
-
-    <View
+    <ScrollView
+        android:id="@+id/form"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/account_id_label"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Gender: "
-        android:layout_below="@+id/account_id_label"
-        android:id="@+id/account_gender_label" />
+        <LinearLayout
+            android:id="@+id/profile_update_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_toRightOf="@id/account_gender_label"
-        android:text=""
-        android:layout_below="@+id/account_id_label"
-        android:id="@+id/account_gender_value" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/student_id"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccentHighlight" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/account_gender_label"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/account_id_value"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Degree: "
-        android:layout_below="@+id/account_gender_label"
-        android:id="@+id/account_degree_label" />
+            <TextView
+                android:text="@string/gender"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/account_gender_label"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccentHighlight" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_toRightOf="@id/account_degree_label"
-        android:text=""
-        android:layout_below="@+id/account_gender_label"
-        android:id="@+id/account_degree_value" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/account_gender_value"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccent" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/account_degree_label"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/degree"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/account_degree_label"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccentHighlight" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Status: "
-        android:layout_below="@+id/account_degree_label"
-        android:id="@+id/account_status_label" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/account_degree_value"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_toRightOf="@id/account_status_label"
-        android:text=""
-        android:layout_below="@+id/account_degree_label"
-        android:id="@+id/account_status_value" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/status"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/account_status_label"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccentHighlight"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/account_status_label"
-        android:id="@+id/view3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/account_status_value"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccent" />
 
-    <Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Update"
-    android:layout_below="@+id/view3"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_marginTop="12dp"
-    android:id="@+id/account_button_update" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:id="@+id/account_button_update"
+                android:textSize="20sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/button_design"
+                android:layout_gravity="center_horizontal"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:layout_below="@+id/account_button_update"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="12dp"
-        android:id="@+id/account_button_logout" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:id="@+id/account_button_logout"
+                android:textSize="20sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/button_design"
+                android:layout_gravity="center_horizontal"/>
 
-</RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

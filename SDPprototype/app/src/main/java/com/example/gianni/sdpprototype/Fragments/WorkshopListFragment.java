@@ -90,7 +90,7 @@ public class WorkshopListFragment extends ListFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        upcomingSessions = inflater.inflate(R.layout.upcoming_workshop, container, false);
+        upcomingSessions = inflater.inflate(R.layout.workshop_list_layout, container, false);
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_upcoming_sessions);
 

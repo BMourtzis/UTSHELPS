@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/book_workshop_background">
 
     <Spinner
         android:layout_width="match_parent"
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:hint="From"
             android:inputType="date"
+            
             android:ems="10"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"

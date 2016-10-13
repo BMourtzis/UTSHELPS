@@ -11,7 +11,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
         android:textColor="@color/colorAccent"
-        android:text="SELECT A WORKSHOP\nCATEGORY"
+        android:text="SELECT A WORKSHOP"
         android:id="@+id/workshop_list_heading"
         android:gravity="center_horizontal"
         android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/progress_bar_workshop_set"
+        app:srcCompat="@drawable/progress_bar_workshop_session"
         android:layout_marginTop="5dp"
         android:id="@+id/progress_bar_workshop_set"
         android:layout_below="@+id/workshop_list_heading"

@@ -1,128 +1,368 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/faq_other_programs_background">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <TextView
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabTextColor="@color/colorAccent"
+            app:tabSelectedTextColor="@color/colorAccentHighlight">
+
+            <android.support.design.widget.TabItem
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/title_faq_helps_program" />
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_faq_exam" />
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_faq_misc" />
+        </android.support.design.widget.TabLayout>
+
+        <Button
             android:text="@string/title_faq_helps_program_question_use"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueTextBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q1_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_use"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q1_text"/>
 
-        <TextView
+        <Button
             android:text="@string/title_faq_helps_program_question_where"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueButtonBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q2_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_where"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q2_text"/>
 
-        <TextView
+        <Button
             android:text="@string/title_faq_helps_program_question_cost"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueButtonBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q3_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_cost"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q3_text"/>
 
-        <TextView
+        <Button
             android:text="@string/title_faq_helps_program_question_assignment"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueButtonBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q4_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_assignment"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q4_text"/>
 
-        <TextView
+        <Button
             android:text="@string/title_faq_helps_program_question_c_assignment"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueButtonBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q5_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_c_assignment"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q5_text"/>
 
-        <TextView
+        <Button
             android:text="@string/title_faq_helps_program_question_h_assignment"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueButtonBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q6_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_h_assignment"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q6_text"/>
 
-        <TextView
+        <Button
             android:text="@string/title_faq_helps_program_question_grammar"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueButtonBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q7_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_grammar"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q7_text"/>
 
-        <TextView
+        <Button
             android:text="@string/title_faq_helps_program_question_pronunciation"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueButtonBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q8_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_pronunciation"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q8_text"/>
 
-        <TextView
+        <Button
             android:text="@string/title_faq_helps_program_question_presentation"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorOpaqueButtonBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/faq_q9_button"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorAccentHighlight"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_presentation"
-            android:textSize="15dp"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorOpaqueButtonBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/faq_q9_text"/>
 
     </LinearLayout>
 </ScrollView>
