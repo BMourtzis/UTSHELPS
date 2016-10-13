@@ -99,7 +99,7 @@ public class HistoryFragment extends ListFragment {
         return historyView;
     }
 
-//    private ArrayList<Booking> getPastBooking(ArrayList<Booking> bookings)
+//    private ArrayList<Booking> getPastBooking(ArrayList<Booking> home)
 //    {
 //
 //    }

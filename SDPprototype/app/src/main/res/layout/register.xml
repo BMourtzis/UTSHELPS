@@ -1,155 +1,166 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/landing_page_background"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
 
     <ScrollView
+        android:id="@+id/registration_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/registration_form_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:textSize="30dp"
-                android:text="@string/register_form_label"
-                android:id="@+id/register_label"/>
+                android:textColorHint="@color/colorAccent">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_studentId"
-                android:layout_below="@+id/register_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
+                <AutoCompleteTextView
+                    android:id="@+id/student_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:hint="@string/prompt_studentId"
-                    android:id="@+id/register_id_edit" />
+                    android:hint="@string/student_id"
+                    android:inputType="numberSigned"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_pref_name"
-                android:layout_below="@+id/til_studentId"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent">
 
-                <EditText
+                <AutoCompleteTextView
+                    android:id="@+id/preffered_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:hint="@string/prompt_preferred_name"
-                    android:id="@+id/register_name_edit" />
+                    android:hint="@string/preffered_name"
+                    android:inputType="numberSigned"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_dob"
-                android:layout_below="@+id/til_pref_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent">
 
-                <EditText
+                <AutoCompleteTextView
+                    android:id="@+id/date_of_birth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="date"
-                    android:id="@+id/register_dob_edit"
-                    android:hint="@string/prompt_dob" />
+                    android:hint="@string/date_of_birth"
+                    android:inputType="numberSigned"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_gender"
-                android:layout_below="@+id/til_dob"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent">
 
-                <EditText
+                <AutoCompleteTextView
+                    android:id="@+id/gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:hint="@string/prompt_gender"
-                    android:id="@+id/register_gender_edit" />
-
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_degree"
-                android:layout_below="@+id/til_gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:hint="@string/prompt_degree"
-                    android:id="@+id/register_degree_edit" />
+                    android:hint="@string/gender"
+                    android:inputType="numberSigned"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_status"
-                android:layout_below="@+id/til_degree"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent">
 
-                <EditText
+                <AutoCompleteTextView
+                    android:id="@+id/degree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:hint="@string/prompt_status"
-                    android:id="@+id/register_status_edit" />
+                    android:hint="@string/degree"
+                    android:inputType="numberSigned"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_first_language"
-                android:layout_below="@+id/til_status"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent">
 
-                <EditText
+                <AutoCompleteTextView
+                    android:id="@+id/status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:hint="@string/prompt_first_language"
-                    android:id="@+id/register_lang_edit" />
+                    android:hint="@string/status"
+                    android:inputType="numberSigned"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_origin_country"
-                android:layout_below="@+id/til_first_language"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent">
 
-                <EditText
+                <AutoCompleteTextView
+                    android:id="@+id/first_language"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:hint="@string/prompt_origin_country"
-                    android:id="@+id/register_country_edit" />
+                    android:hint="@string/first_language"
+                    android:inputType="numberSigned"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/country_of_origin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/country_of_origin"
+                    android:inputType="numberSigned"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/til_origin_country"
-                android:text="@string/register_button"
+                android:text="Create Account"
                 android:id="@+id/create_account_button"
-                android:layout_alignParentBottom="true" />
+                android:textSize="20sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/button_design"
+                android:layout_gravity="center_horizontal"/>
 
-        </RelativeLayout>
-
+        </LinearLayout>
     </ScrollView>
-
-</RelativeLayout>
+</LinearLayout>

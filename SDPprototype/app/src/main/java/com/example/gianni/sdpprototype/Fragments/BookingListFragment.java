@@ -105,7 +105,7 @@ public class BookingListFragment extends ListFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        bookingsView = inflater.inflate(R.layout.bookings, container, false);
+        bookingsView = inflater.inflate(R.layout.home, container, false);
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_bookings);
         return bookingsView;

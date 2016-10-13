@@ -6,23 +6,25 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Select the type of workshop"
+        android:textColor="@color/colorAccent"
+        android:text="SELECT A WORKSHOP\nCATEGORY"
         android:id="@+id/workshop_list_heading"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/progress_bar_workshop_set"
-        android:layout_alignParentTop="true"
-        android:layout_below="@id/workshop_list_heading"
-        android:layout_marginLeft="0dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="35dp"
-        android:id="@+id/progress_bar_workshop_set" />
+        android:layout_marginTop="5dp"
+        android:id="@+id/progress_bar_workshop_set"
+        android:layout_below="@+id/workshop_list_heading"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp" />
 
     <ListView
         android:layout_below="@+id/progress_bar_workshop_set"
