@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.gianni.sdpprototype.R;
 
@@ -17,16 +18,17 @@ import com.example.gianni.sdpprototype.R;
 public class CheckAttendanceFragment extends Fragment {
 
     View checkAttendance;
-    Button button;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        checkAttendance = inflater.inflate(R.layout.check_attendance, container, false);
 
+        checkAttendance = inflater.inflate(R.layout.check_attendance, container, false);
+        
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_check_attendance);
 
         return checkAttendance;
     }
+
 }
 

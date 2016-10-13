@@ -4,10 +4,8 @@ import android.app.FragmentManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -37,8 +35,7 @@ public class MainActivity extends AppCompatActivity
     private IntentFilter[] mNdefExchangeFilters;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -86,7 +83,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onPause() {
         super.onPause();
-        if(mNfcAdapter != null) mNfcAdapter.disableForegroundDispatch(this);
+        if (mNfcAdapter != null) mNfcAdapter.disableForegroundDispatch(this);
     }
 
     @Override
@@ -102,27 +99,16 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        NdefMessage[] message = null;
-        Parcelable[] msg = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+        byte[] payload = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
         FragmentManager fragmentManager = getFragmentManager();
 
-        if (msg != null) {
-            message = new NdefMessage[msg.length];
-            for (int i = 0; i < msg.length; i++) {
-                message[i] = (NdefMessage) msg[i];
-            }
-        }
+        String serial = getHex(payload);
 
-        String parentID="";
-        byte[] payload = message[0].getRecords()[0].getPayload();
 
-        for (int temp = 3; temp < payload.length; temp++) {
-            parentID += (char) payload[temp];
-        }
-        Toast.makeText(getApplicationContext(), parentID, Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(getApplicationContext(), serial, Toast.LENGTH_SHORT).show();
         fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendanceFragment()).commit();
     }
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -131,8 +117,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
 
-        switch (id)
-        {
+        switch (id) {
             case R.id.nav_bookings:
                 fragmentManager.beginTransaction().replace(R.id.content_frame, new BookingListFragment()).commit();
                 break;
@@ -198,5 +183,19 @@ public class MainActivity extends AppCompatActivity
         workshopFragment.setArguments(args);
 
         fragmentManager.beginTransaction().replace(R.id.content_frame, workshopFragment).commit();
+    }
+
+    private String getHex(byte[] bytes) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = bytes.length - 1; i >= 0; --i) {
+            int b = bytes[i] & 0xff;
+            if (b < 0x10)
+                sb.append('0');
+            sb.append(Integer.toHexString(b));
+            if (i > 0) {
+                sb.append(":");
+            }
+        }
+        return String.valueOf(sb);
     }
 }
