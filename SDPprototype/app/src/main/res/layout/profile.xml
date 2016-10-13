@@ -107,7 +107,7 @@
         android:paddingRight="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorTextBlack"
         android:background="@drawable/button_design"
         android:layout_gravity="center_horizontal"/>
 

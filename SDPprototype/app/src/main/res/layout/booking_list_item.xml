@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/home_background">
+    android:layout_height="wrap_content">
 
     <TextView android:id="@+id/booking_topic"
         android:textSize="20sp"
@@ -13,11 +12,10 @@
         android:paddingLeft="10dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:text="This is a test" />
 
     <TextView android:id="@+id/booking_starting_label"
@@ -29,8 +27,8 @@
         android:layout_marginRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:text="Starts @ " />
 
     <TextView android:id="@+id/booking_starting"
@@ -43,8 +41,8 @@
         android:layout_marginRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:text="test" />
 
 </RelativeLayout>

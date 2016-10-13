@@ -9,32 +9,9 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.design.widget.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:tabTextColor="@color/colorAccent"
-            app:tabSelectedTextColor="@color/colorAccentHighlight">
-
-            <android.support.design.widget.TabItem
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/title_faq_helps_program" />
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title_faq_exam" />
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title_faq_misc" />
-        </android.support.design.widget.TabLayout>
-
         <Button
             android:text="@string/title_faq_helps_program_question_use"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -42,7 +19,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueTextBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q1_button"/>
@@ -52,7 +30,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_use"
@@ -61,8 +39,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -71,7 +49,6 @@
         <Button
             android:text="@string/title_faq_helps_program_question_where"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -79,7 +56,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q2_button"/>
@@ -89,7 +67,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_where"
@@ -98,8 +76,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -108,7 +86,6 @@
         <Button
             android:text="@string/title_faq_helps_program_question_cost"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -116,7 +93,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q3_button"/>
@@ -126,7 +104,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_cost"
@@ -135,8 +113,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -145,7 +123,6 @@
         <Button
             android:text="@string/title_faq_helps_program_question_assignment"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -153,7 +130,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q4_button"/>
@@ -163,7 +141,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_assignment"
@@ -172,8 +150,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -182,7 +160,6 @@
         <Button
             android:text="@string/title_faq_helps_program_question_c_assignment"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -190,7 +167,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q5_button"/>
@@ -200,7 +178,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_c_assignment"
@@ -209,8 +187,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -219,7 +197,6 @@
         <Button
             android:text="@string/title_faq_helps_program_question_h_assignment"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -227,7 +204,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q6_button"/>
@@ -237,7 +215,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_h_assignment"
@@ -246,8 +224,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -256,7 +234,6 @@
         <Button
             android:text="@string/title_faq_helps_program_question_grammar"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -264,7 +241,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q7_button"/>
@@ -274,7 +252,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_grammar"
@@ -283,8 +261,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -293,7 +271,6 @@
         <Button
             android:text="@string/title_faq_helps_program_question_pronunciation"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -301,7 +278,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q8_button"/>
@@ -311,7 +289,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_pronunciation"
@@ -320,8 +298,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -330,7 +308,6 @@
         <Button
             android:text="@string/title_faq_helps_program_question_presentation"
             android:textSize="20sp"
-            android:textColor="@color/colorAccent"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
@@ -338,7 +315,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/faq_q9_button"/>
@@ -348,7 +326,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorAccentHighlight"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_presentation"
@@ -357,8 +335,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorOpaqueButtonBackground"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"

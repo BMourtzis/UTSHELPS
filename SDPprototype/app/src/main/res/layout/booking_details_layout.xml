@@ -98,7 +98,7 @@
             android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/button_design"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorTextBlack"
             android:id="@+id/booking_cancel_button" />
 
     </LinearLayout>

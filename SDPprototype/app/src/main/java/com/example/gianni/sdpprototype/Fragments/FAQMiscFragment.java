@@ -58,10 +58,10 @@ public class FAQMiscFragment extends Fragment {
             }
         });
 
-        Button button5 = (Button) FAQView.findViewById(R.id.misc_q4_button);
+        Button button5 = (Button) FAQView.findViewById(R.id.misc_q5_button);
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                TextView text = (TextView) FAQView.findViewById(R.id.misc_q4_text);
+                TextView text = (TextView) FAQView.findViewById(R.id.misc_q5_text);
                 text.setVisibility(text.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
             }
         });
