@@ -1,5 +1,6 @@
 package com.example.gianni.sdpprototype.Fragments;
 
+import android.app.DatePickerDialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.gianni.sdpprototype.Models.Booking;
@@ -107,7 +109,7 @@ public class WorkshopFragment extends Fragment
 
                 RestClient client = new RestClient();
 
-                if(item.getBookingCount() >= item.getMaximum())
+                if(item.getBookingCount() >= item.getCutoff())
                 {
                     Call<ResponseType> call = client.getHelpsService().createWaiting(workshopId, studentId, stId);
 

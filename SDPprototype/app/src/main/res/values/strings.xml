@@ -44,6 +44,9 @@
     <string name="action_register">REGISTER</string>
     <string name="prompt_preferred_name">Preferred Name</string>
     <string name="prompt_dob">Date of Birth</string>
+    <string name="prompt_day">Day</string>
+    <string name="prompt_month">Month</string>
+    <string name="prompt_year">Year</string>
     <string name="prompt_gender">Gender</string>
     <string name="prompt_degree">Degree</string>
     <string name="prompt_status">Status</string>
@@ -60,6 +63,16 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="gender_other">Other</string>
+
+    <string name="degree_undergraduate">Undergraduate</string>
+    <string name="degree_postgraduate">Postgraduate</string>
+
+    <string name="status_international">International</string>
+    <string name="status_permanent">Permanent</string>
 
     <string name="upcoming_sessions_search">Search</string>
     <string name="search_result_title">Search Results</string>
