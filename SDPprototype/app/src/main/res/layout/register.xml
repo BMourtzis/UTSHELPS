@@ -61,67 +61,46 @@
                 android:textSize="18dp"
                 android:textColor="@color/colorAccentHighlight"/>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_register_day"
+
+            <EditText
+                android:id="@+id/register_day"
                 android:layout_below="@+id/register_text_dob"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/colorAccentHighlight">
+                android:hint="@string/prompt_day"
+                android:textColorHint="@color/colorAccentHighlight"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"/>
 
-                <EditText
-                    android:id="@+id/register_day"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_day"
-                    android:inputType="numberSigned"
-                    android:maxLines="1"
-                    android:maxLength="2"/>
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_register_month"
+            <EditText
+                android:id="@+id/register_month"
                 android:layout_below="@+id/register_text_dob"
-                android:layout_toRightOf="@+id/til_register_day"
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/register_day"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/colorAccentHighlight">
+                android:hint="@string/prompt_month"
+                android:textColorHint="@color/colorAccentHighlight"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"/>
 
-                <EditText
-                    android:id="@+id/register_month"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_month"
-                    android:inputType="numberSigned"
-                    android:maxLines="1"
-                    android:maxLength="2"/>
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_register_year"
+            <EditText
+                android:id="@+id/register_year"
                 android:layout_below="@+id/register_text_dob"
-                android:layout_toRightOf="@+id/til_register_month"
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/register_month"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/colorAccentHighlight">
+                android:hint="@string/prompt_year"
+                android:textColorHint="@color/colorAccentHighlight"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="4"/>
 
-                <EditText
-                    android:id="@+id/register_year"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_year"
-                    android:inputType="numberSigned"
-                    android:maxLines="1"
-                    android:maxLength="4"/>
-
-            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:id="@+id/register_gender"
-                android:layout_below="@+id/til_register_day"
+                android:layout_below="@+id/register_day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/prompt_gender"

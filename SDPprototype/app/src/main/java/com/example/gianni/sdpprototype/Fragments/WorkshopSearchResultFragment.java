@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ListView;
 
 import com.example.gianni.sdpprototype.Adapters.WorkshopListAdapter;
@@ -108,7 +109,6 @@ public class WorkshopSearchResultFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         searchResultView = inflater.inflate(R.layout.workshop_search_result_layout, container, false);
-
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.search_result_title);
 
         return searchResultView;

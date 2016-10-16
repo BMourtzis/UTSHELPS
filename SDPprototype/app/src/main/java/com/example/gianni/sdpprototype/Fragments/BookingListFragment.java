@@ -54,21 +54,6 @@ public class BookingListFragment extends ListFragment {
             public void onResponse(Call<GenericResponse<List<Booking>>> call, Response<GenericResponse<List<Booking>>> response) {
                 items = new ArrayList<Booking>(response.body().getResult());
 
-                for(int i = 0; i < items.size(); i++)
-                {
-                    try
-                    {
-                        if(items.get(i).getBookingArchived() != null)
-                        {
-                            items.remove(i);
-                        }
-                    }
-                    catch(Exception e)
-                    {
-
-                    }
-                }
-
                 BookingListAdapter adapter = new BookingListAdapter(getActivity(), R.layout.booking_list_item, items);
                 setListAdapter(adapter);
             }

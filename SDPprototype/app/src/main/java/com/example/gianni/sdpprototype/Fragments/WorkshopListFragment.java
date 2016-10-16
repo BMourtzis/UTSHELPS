@@ -16,9 +16,10 @@ import com.example.gianni.sdpprototype.Models.Workshop;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
+import com.example.gianni.sdpprototype.Utilities;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -45,8 +46,13 @@ public class WorkshopListFragment extends ListFragment {
 
         int id = args.getInt("id");
 
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.YEAR, 1);
+        Date endDate = cal.getTime();
+        Date startDate = new Date();
+
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id, "09/10/2015", "09/10/2016", true, currectPage, 20);
+        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id, Utilities.getStringDateUS(startDate), Utilities.getStringDateUS(endDate), true, currectPage, 20);
         currectPage++;
 
         call.enqueue(new Callback<GenericResponse<List<Workshop>>>() {
@@ -54,7 +60,7 @@ public class WorkshopListFragment extends ListFragment {
             public void onResponse(Call<GenericResponse<List<Workshop>>> call, Response<GenericResponse<List<Workshop>>> response)
             {
                 items = new ArrayList<Workshop>(response.body().getResult());
-                WorkshopListAdapter adapter = new WorkshopListAdapter(getActivity(), R.layout.workshop_set_item_layout, items);
+                WorkshopListAdapter adapter = new WorkshopListAdapter(getActivity(), R.layout.workshop_item_layout, items);
                 setListAdapter(adapter);
             }
 
