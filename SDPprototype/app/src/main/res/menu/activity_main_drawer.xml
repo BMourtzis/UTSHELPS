@@ -10,6 +10,7 @@
             android:title="@string/title_bookings" />
         <item
             android:id="@+id/nav_waiting"
+            android:icon="@drawable/waiting_list_icon"
             android:title="@string/title_waiting_list"/>
         <item
             android:id="@+id/nav_upcoming_sessions"

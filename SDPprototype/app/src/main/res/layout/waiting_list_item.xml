@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView android:id="@+id/booking_topic"
+    <TextView android:id="@+id/waiting_topic"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_width="match_parent"
@@ -18,8 +18,8 @@
         android:background="@color/colorAccent"
         android:text="This is a test" />
 
-    <TextView android:id="@+id/booking_starting_label"
-        android:layout_below="@id/booking_topic"
+    <TextView android:id="@+id/waiting_date"
+        android:layout_below="@id/waiting_topic"
         android:textSize="15sp"
         android:paddingLeft="10dp"
         android:paddingBottom="10dp"
@@ -29,5 +29,5 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorTextBlack"
         android:background="@color/colorAccent"
-        android:text="Date " />
+        android:text="Starts @ " />
 </RelativeLayout>
