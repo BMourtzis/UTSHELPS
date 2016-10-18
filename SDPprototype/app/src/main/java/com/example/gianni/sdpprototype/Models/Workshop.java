@@ -348,4 +348,29 @@ public class Workshop
         }
         return strFormat.format(date);
     }
+
+    public String getRemaining()
+    {
+        if(getCutoff() == null)
+        {
+            return "N/A";
+        }
+        else
+        {
+            int i = 0;
+            try
+            {
+                i = cutoff - bookingCount;
+                if(i<0)
+                {
+                    i = 0;
+                }
+            }
+            catch(Exception e)
+            {
+
+            }
+            return ""+i;
+        }
+    }
 }

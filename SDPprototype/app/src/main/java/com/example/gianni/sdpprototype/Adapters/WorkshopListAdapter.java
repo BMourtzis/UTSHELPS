@@ -33,12 +33,20 @@ public class WorkshopListAdapter extends ArrayAdapter<Workshop> {
         if(v == null)
         {
             LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = vi.inflate(R.layout.workshop_set_item_layout, null);
+            v = vi.inflate(R.layout.workshop_item_layout, null);
         }
 
         Workshop r = workshops.get(position);
-        TextView nameText = (TextView) v.findViewById(R.id.workshop_set_name);
+
+        TextView nameText = (TextView) v.findViewById(R.id.workshop_name);
         nameText.setText(r.getTopic());
+
+        TextView startingText = (TextView) v.findViewById(R.id.workshop_label_starting);
+        startingText.setText("Starts @ " +r.getStartDate());
+
+        TextView remainingText = (TextView) v.findViewById(R.id.workshop_label_remaining);
+        remainingText.setText("Remaining: "+r.getRemaining());
+
         return v;
     }
 }

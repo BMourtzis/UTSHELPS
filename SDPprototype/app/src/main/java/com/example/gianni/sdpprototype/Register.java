@@ -1,14 +1,15 @@
 package com.example.gianni.sdpprototype;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 
-import com.example.gianni.sdpprototype.Models.Student;
-import com.example.gianni.sdpprototype.Responses.GenericResponse;
+import com.example.gianni.sdpprototype.Models.StudentReg;
 import com.example.gianni.sdpprototype.Responses.ResponseType;
 import com.example.gianni.sdpprototype.RestService.RestClient;
 
@@ -21,6 +22,8 @@ import retrofit2.Response;
  */
 public class Register extends AppCompatActivity {
 
+    private DatePickerDialog mPickerDialog;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,16 +33,56 @@ public class Register extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String dob = "";
+                String gender = "O";
+                String degree = "";
+                String status = "";
+
+                EditText dayText = (EditText) findViewById(R.id.register_day);
+                EditText monthText = (EditText) findViewById(R.id.register_month);
+                EditText yearText = (EditText) findViewById(R.id.register_year);
+
+                dob = dayText.getText().toString()+"/"+monthText.getText().toString()+"/"+yearText.getText().toString();
+
+                RadioGroup genderRadio = (RadioGroup) findViewById(R.id.register_gender_radio);
+                int genderbuttonId = genderRadio.getCheckedRadioButtonId();
+                if(genderbuttonId == R.id.register_gender_male)
+                {
+                    gender = "M";
+                }
+                else if(genderbuttonId == R.id.register_gender_female)
+                {
+                    gender = "F";
+                }
+
+                RadioGroup degreeRadio = (RadioGroup) findViewById(R.id.register_degree_radio);
+                int degreebuttonId = degreeRadio.getCheckedRadioButtonId();
+                if(degreebuttonId == R.id.register_degree_under)
+                {
+                    degree = "U";
+                }
+                else if(degreebuttonId == R.id.register_degree_post)
+                {
+                    degree = "P";
+                }
+
+                RadioGroup statusRadio = (RadioGroup) findViewById(R.id.register_status_radio);
+                int statusbuttonId = statusRadio.getCheckedRadioButtonId();
+                if(statusbuttonId == R.id.register_status_perm)
+                {
+                    status = "Permanent";
+                }
+                else if(statusbuttonId == R.id.register_status_int)
+                {
+                    status = "International";
+                }
+
                 EditText studentIdText = (EditText) findViewById(R.id.student_id);
-                EditText dobText = (EditText) findViewById(R.id.date_of_birth);
                 EditText nameText = (EditText) findViewById(R.id.preffered_name);
-                EditText genderText = (EditText) findViewById(R.id.gender);
-                EditText degreeText = (EditText) findViewById(R.id.degree);
-                EditText statusText = (EditText) findViewById(R.id.status);
                 EditText langText = (EditText) findViewById(R.id.first_language);
                 EditText countryText = (EditText) findViewById(R.id.country_of_origin);
 
-                Student student = new Student(studentIdText.toString(), dobText.toString(), nameText.toString(), degreeText.toString(), genderText.toString(), statusText.toString(), langText.toString(), countryText.toString(), 1);
+                StudentReg student = new StudentReg(studentIdText.getText().toString(), dob, nameText.getText().toString(), degree, gender, status, langText.getText().toString(), countryText.getText().toString(), 1);
 
                 RestClient client = new RestClient();
                 Call<ResponseType> call = client.getHelpsService().registerStudent(student);
@@ -63,6 +106,5 @@ public class Register extends AppCompatActivity {
             }
         });
     }
-
 }
 

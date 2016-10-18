@@ -16,15 +16,15 @@ import com.example.gianni.sdpprototype.R;
  * Created by Vasil on 6/10/2016.
  */
 
-public class FAQFragment extends Fragment{
+public class FAQProgramFragment extends Fragment{
     View FAQView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        FAQView = inflater.inflate(R.layout.faq_layout, container, false);
+        FAQView = inflater.inflate(R.layout.faq_program_layout, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_faq);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_faq_helps_program);
 
         Button button1 = (Button) FAQView.findViewById(R.id.faq_q1_button);
         button1.setOnClickListener(new View.OnClickListener() {

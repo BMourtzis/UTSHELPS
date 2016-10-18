@@ -3,6 +3,7 @@ package com.example.gianni.sdpprototype.Models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.gianni.sdpprototype.RestService.RestClient;
 import com.google.gson.annotations.SerializedName;
 
 import java.text.SimpleDateFormat;
@@ -271,6 +272,8 @@ public class Booking implements Parcelable, Comparator<Booking>, Comparable<Book
         {
 
         }
-        return strFormat.format(date);
+
+        String s1 = strFormat.format(date);
+        return s1;
     }
 }

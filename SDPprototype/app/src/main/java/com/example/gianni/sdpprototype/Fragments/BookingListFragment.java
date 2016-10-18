@@ -20,6 +20,7 @@ import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,6 +35,7 @@ public class BookingListFragment extends ListFragment {
     FragmentCallback mCallback;
     View bookingsView;
     ArrayList<Booking> items;
+    int currectPage = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -44,27 +46,13 @@ public class BookingListFragment extends ListFragment {
         String studentId = sharedPrefs.getString("studentId", "error");
 
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId);
+        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId, true, currectPage, 20);
+        currectPage++;
 
         call.enqueue(new Callback<GenericResponse<List<Booking>>>() {
             @Override
             public void onResponse(Call<GenericResponse<List<Booking>>> call, Response<GenericResponse<List<Booking>>> response) {
                 items = new ArrayList<Booking>(response.body().getResult());
-
-                for(int i = 0; i < items.size(); i++)
-                {
-                    try
-                    {
-                        if(items.get(i).getCanceled() == 1)
-                        {
-                            items.remove(i);
-                        }
-                    }
-                    catch(Exception e)
-                    {
-
-                    }
-                }
 
                 BookingListAdapter adapter = new BookingListAdapter(getActivity(), R.layout.booking_list_item, items);
                 setListAdapter(adapter);

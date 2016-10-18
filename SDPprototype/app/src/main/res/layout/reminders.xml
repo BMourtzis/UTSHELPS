@@ -29,8 +29,8 @@
         android:paddingBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -39,7 +39,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorAccentHighlight"/>
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:text="'Understanding Turnitin' starts at 2pm today"
@@ -50,8 +50,8 @@
         android:paddingBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -76,8 +76,8 @@
         android:paddingBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -86,7 +86,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorAccentHighlight"/>
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:text="'Presentation Skills' starts at 11am today"
@@ -97,8 +97,8 @@
         android:paddingBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -107,7 +107,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorAccentHighlight"/>
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:text="'Presentation Skills' starts at 11am today"
@@ -118,8 +118,8 @@
         android:paddingBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -144,8 +144,8 @@
         android:paddingBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -154,7 +154,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorAccentHighlight"/>
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:text="'Presentation Skills' starts at 11am today"
@@ -165,8 +165,8 @@
         android:paddingBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/colorAccent"
-        android:background="@color/colorOpaqueButtonBackground"
+        android:textColor="@color/colorTextBlack"
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

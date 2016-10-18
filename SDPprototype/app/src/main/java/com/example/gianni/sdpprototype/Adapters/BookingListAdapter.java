@@ -43,8 +43,8 @@ public class BookingListAdapter extends ArrayAdapter<Booking> {
         Booking r = bookings.get(position);
         TextView topicText = (TextView) v.findViewById(R.id.booking_topic);
         topicText.setText(r.getTopic());
-        TextView startingText = (TextView) v.findViewById(R.id.booking_starting);
-        startingText.setText(r.getStarting());
+        TextView startingText = (TextView) v.findViewById(R.id.booking_starting_label);
+        startingText.setText("Starts @ "+r.getStarting());
         return v;
     }
 }

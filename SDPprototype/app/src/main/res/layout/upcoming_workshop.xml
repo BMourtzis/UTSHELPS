@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
         android:textColor="@color/colorAccent"
         android:text="SELECT A WORKSHOP\nCATEGORY"
         android:id="@+id/workshop_list_heading"
@@ -31,6 +32,6 @@
         android:layout_marginTop="5dp"
         android:id="@android:id/list"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

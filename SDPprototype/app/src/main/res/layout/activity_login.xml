@@ -66,8 +66,7 @@
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -85,7 +84,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorTextBlack"
                 android:background="@drawable/button_design" />
 
             <TextView
@@ -111,7 +110,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorTextBlack"
                 android:background="@drawable/button_design" />
 
         </LinearLayout>

@@ -1,44 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent" android:layout_height="match_parent"
-android:background="@drawable/book_workshop_background">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView android:id="@+id/workshop_set_name"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:gravity="center_horizontal"
+        android:textColor="@color/colorTextBlack"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center|center_horizontal"
+        android:background="@color/colorAccent"
         android:text="This is a test" />
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:textColor="@color/colorAccent"
-    android:text="SELECT A WORKSHOP"
-    android:id="@+id/workshop_list_heading"
-    android:gravity="center_horizontal"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true" />
-
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:srcCompat="@drawable/progress_bar_workshop_session"
-    android:layout_marginTop="5dp"
-    android:id="@+id/progress_bar_workshop_session"
-    android:layout_below="@+id/workshop_list_heading"
-    android:layout_marginRight="30dp"
-    android:layout_marginLeft="30dp" />
-
-<ListView
-    android:layout_below="@+id/progress_bar_workshop_session"
-    android:layout_marginTop="5dp"
-    android:id="@android:id/list"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"></ListView>
-
-</RelativeLayout>
+</LinearLayout>

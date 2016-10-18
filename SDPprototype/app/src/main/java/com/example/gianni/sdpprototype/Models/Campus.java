@@ -14,6 +14,10 @@ public class Campus {
     @SerializedName("archived")
     public boolean archived;
 
+    public Campus(String campus) {
+        this.campus = campus;
+    }
+
     public boolean isArchived() {
         return archived;
     }
@@ -36,5 +40,11 @@ public class Campus {
 
     public void setCampus(String campus) {
         this.campus = campus;
+    }
+
+    @Override
+    public String toString()
+    {
+        return campus;
     }
 }

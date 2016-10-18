@@ -16,8 +16,11 @@ import com.example.gianni.sdpprototype.Models.Workshop;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
+import com.example.gianni.sdpprototype.Utilities;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,6 +35,7 @@ public class WorkshopListFragment extends ListFragment {
     FragmentCallback mCallback;
     View upcomingSessions;
     ArrayList<Workshop> items;
+    int currectPage = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -42,15 +46,21 @@ public class WorkshopListFragment extends ListFragment {
 
         int id = args.getInt("id");
 
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.YEAR, 1);
+        Date endDate = cal.getTime();
+        Date startDate = new Date();
+
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id);
+        Call<GenericResponse<List<Workshop>>> call = client.getHelpsService().getWorkshopList(id, Utilities.getStringDateUS(startDate), Utilities.getStringDateUS(endDate), true, currectPage, 20);
+        currectPage++;
 
         call.enqueue(new Callback<GenericResponse<List<Workshop>>>() {
             @Override
             public void onResponse(Call<GenericResponse<List<Workshop>>> call, Response<GenericResponse<List<Workshop>>> response)
             {
                 items = new ArrayList<Workshop>(response.body().getResult());
-                WorkshopListAdapter adapter = new WorkshopListAdapter(getActivity(), R.layout.workshop_set_item_layout, items);
+                WorkshopListAdapter adapter = new WorkshopListAdapter(getActivity(), R.layout.workshop_item_layout, items);
                 setListAdapter(adapter);
             }
 
@@ -86,7 +96,7 @@ public class WorkshopListFragment extends ListFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        upcomingSessions = inflater.inflate(R.layout.upcoming_workshop, container, false);
+        upcomingSessions = inflater.inflate(R.layout.workshop_list_layout, container, false);
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_upcoming_sessions);
 

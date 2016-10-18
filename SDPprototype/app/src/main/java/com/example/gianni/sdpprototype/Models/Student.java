@@ -10,37 +10,63 @@ import com.google.gson.annotations.SerializedName;
 
 public class Student
 {
+    @SerializedName("studentID")
     private String studentID;
-    @SerializedName("DateOfBirth")
+    @SerializedName("dob")
     private String dob;
+    @SerializedName("gender")
     private String gender;
+    @SerializedName("degree")
     private String degree;
+    @SerializedName("status")
     private String status;
-    @SerializedName("FirstLanguage")
+    @SerializedName("first_language")
     private String first_language;
-    @SerializedName("CountryOrigin")
+    @SerializedName("country_origin")
     private String country_origin;
+    @SerializedName("background")
     private String background;
+    @SerializedName("HSC")
     private boolean HSC;
+    @SerializedName("HSC_mark")
     private String hSCMark;
+    @SerializedName("IELTS")
     private boolean iELTS;
+    @SerializedName("IELTS_mark")
     private String iELTSMark;
+    @SerializedName("TOEFL")
     private boolean tOEFL;
+    @SerializedName("TOEFL_mark")
     private String tOEFLMark;
+    @SerializedName("TAFE")
     private boolean tAFE;
+    @SerializedName("TAFE_mark")
     private String tAFEMark;
+    @SerializedName("CULT")
     private boolean cULT;
+    @SerializedName("CULT_mark")
     private String cULTMark;
+    @SerializedName("InsearchDEEP")
     private boolean insearchDEEP;
+    @SerializedName("InsearchDEEP_mark")
     private String insearchDEEPMark;
+    @SerializedName("InsearchDiploma")
     private boolean insearchDiploma;
+    @SerializedName("InsearchDiploma_mark")
     private String insearchDiplomaMark;
+    @SerializedName("foundationcourse")
     private boolean foundationcourse;
+    @SerializedName("foundationcourse_mark")
     private String foundationcourseMark;
+    @SerializedName("created")
     private String created;
+    @SerializedName("creatorID")
     private Integer creatorID;
+    @SerializedName("degree_details")
     private String degreeDetails;
+    @SerializedName("alternative_contact")
     private String alternativeContact;
+    @SerializedName("preferred_name")
     private String preferredName;
 
     /**

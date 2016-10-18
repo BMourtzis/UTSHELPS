@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -18,13 +17,12 @@ import com.example.gianni.sdpprototype.Models.Workshop;
 import com.example.gianni.sdpprototype.R;
 import com.example.gianni.sdpprototype.Responses.GenericResponse;
 import com.example.gianni.sdpprototype.Responses.ResponseType;
+import com.example.gianni.sdpprototype.Responses.CheckWaitingResponse;
+import com.example.gianni.sdpprototype.Responses.WaitingCountResponse;
 import com.example.gianni.sdpprototype.RestService.RestClient;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -74,6 +72,20 @@ public class WorkshopFragment extends Fragment
                 TextView endingText = (TextView) workshopView.findViewById(R.id.workshop_details_value_ending);
                 endingText.setText(item.getEndDate());
 
+                TextView remainingText = (TextView) workshopView.findViewById(R.id.workshop_details_value_remaining);
+                remainingText.setText(item.getRemaining());
+
+                TextView targetText = (TextView) workshopView.findViewById(R.id.workshop_details_value_target);
+                targetText.setText(item.getTargetingGroup());
+
+                if(item.getRemaining().equals("0"))
+                {
+                    Button button = (Button) workshopView.findViewById(R.id.workshop_booking_button);
+                    button.setText("Add to Waiting List");
+
+                    setWaitingCount(item.getWorkshopId());
+                    checkIfWaiting(item.getWorkshopId());
+                }
                 checkIfBooked(item.getWorkshopId());
             }
 
@@ -97,26 +109,50 @@ public class WorkshopFragment extends Fragment
                 int stId = Integer.parseInt(studentId);
 
                 RestClient client = new RestClient();
-                Call<ResponseType> call = client.getHelpsService().createBooking(workshopId, studentId, stId);
 
-                call.enqueue(new Callback<ResponseType>() {
-                    @Override
-                    public void onResponse(Call<ResponseType> call, Response<ResponseType> response)
-                    {
-                        boolean isSuc = response.body().getSuccess();
-                        if(isSuc)
+                if(item.getRemaining().equals("0"))
+                {
+                    Call<ResponseType> call = client.getHelpsService().createWaiting(workshopId, studentId, stId);
+
+                    call.enqueue(new Callback<ResponseType>() {
+                        @Override
+                        public void onResponse(Call<ResponseType> call, Response<ResponseType> response)
                         {
-                            Button button = (Button) view.findViewById(R.id.workshop_booking_button);
-                            button.setText("Booked");
+                            if(response.body().getSuccess())
+                            {
+                                Button button = (Button) view.findViewById(R.id.workshop_booking_button);
+                                button.setText("In Waiting List");
+
+                            }
                         }
-                    }
 
-                    @Override
-                    public void onFailure(Call<ResponseType> call, Throwable t) {
-                        int i = 0;
-                    }
-                });
+                        @Override
+                        public void onFailure(Call<ResponseType> call, Throwable t) {
 
+                        }
+                    });
+                }
+                else
+                {
+                    Call<ResponseType> call = client.getHelpsService().createBooking(workshopId, studentId, stId);
+
+                    call.enqueue(new Callback<ResponseType>() {
+                        @Override
+                        public void onResponse(Call<ResponseType> call, Response<ResponseType> response)
+                        {
+                            if(response.body().getSuccess())
+                            {
+                                Button button = (Button) view.findViewById(R.id.workshop_booking_button);
+                                button.setText("Booked");
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseType> call, Throwable t) {
+                            int i = 0;
+                        }
+                    });
+                }
             }
         };
 
@@ -129,7 +165,7 @@ public class WorkshopFragment extends Fragment
         String studentId = sharedPrefs.getString("studentId", "error");
 
         RestClient client = new RestClient();
-        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId);
+        Call<GenericResponse<List<Booking>>> call = client.getHelpsService().getBookingList(studentId, true, 1, 100);
 
         call.enqueue(new Callback<GenericResponse<List<Booking>>>() {
             @Override
@@ -161,6 +197,35 @@ public class WorkshopFragment extends Fragment
         });
     }
 
+    private void checkIfWaiting(final int workshop)
+    {
+        SharedPreferences sharedPrefs = getActivity().getSharedPreferences("utshelps", Context.MODE_PRIVATE);
+        String studentId = sharedPrefs.getString("studentId", "error");
+
+        RestClient client = new RestClient();
+        Call<CheckWaitingResponse> call = client.getHelpsService().getIfWaiting(workshop, studentId);
+
+        call.enqueue(new Callback<CheckWaitingResponse>() {
+            @Override
+            public void onResponse(Call<CheckWaitingResponse> call, Response<CheckWaitingResponse> response) {
+                if(response.body().isWaitingList())
+                {
+                    TextView countView = (TextView) workshopView.findViewById(R.id.workshop_waiting_count);
+                    countView.setVisibility(View.INVISIBLE);
+
+                    Button button = (Button) workshopView.findViewById(R.id.workshop_booking_button);
+                    button.setText("Already in Waiting List");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CheckWaitingResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -168,6 +233,29 @@ public class WorkshopFragment extends Fragment
         workshopView = inflater.inflate(R.layout.workshop_details, container, false);
 
         return workshopView;
+    }
+
+    public void setWaitingCount(int workshopId)
+    {
+        RestClient client = new RestClient();
+        Call<WaitingCountResponse> call = client.getHelpsService().getWaitingCount(workshopId);
+
+        call.enqueue(new Callback<WaitingCountResponse>() {
+            @Override
+            public void onResponse(Call<WaitingCountResponse> call, Response<WaitingCountResponse> response) {
+                if(response.body().getSuccess())
+                {
+                    TextView countView = (TextView) workshopView.findViewById(R.id.workshop_waiting_count);
+                    countView.setText("Waiting Count: "+response.body().getCount());
+                    countView.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<WaitingCountResponse> call, Throwable t) {
+
+            }
+        });
     }
 
 

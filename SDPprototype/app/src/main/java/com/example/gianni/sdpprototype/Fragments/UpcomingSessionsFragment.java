@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -37,6 +40,7 @@ public class UpcomingSessionsFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
         RestClient client = new RestClient();
         Call<GenericResponse<List<WorkshopSet>>> call = client.getHelpsService().getWorkshopSets(true);
@@ -87,6 +91,26 @@ public class UpcomingSessionsFragment extends ListFragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_upcoming_sessions);
 
         return upcomingSessions;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.upcoming_session_custom_bar, menu);
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if(id == R.id.menu_upcoming_sessions_search)
+        {
+            mCallback.onWorkshopSearchIconSelected();
+        }
+
+        return true;
     }
 }
 
