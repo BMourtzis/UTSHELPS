@@ -10,7 +10,6 @@ import android.content.SharedPreferences;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,9 +20,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.gianni.sdpprototype.Fragments.AboutFragment;
 import com.example.gianni.sdpprototype.Fragments.AccountFragment;
-import com.example.gianni.sdpprototype.Fragments.ProfileFragment;
+import com.example.gianni.sdpprototype.Fragments.OPDailyWrkFragment;
+import com.example.gianni.sdpprototype.Fragments.OPDropInFragment;
+import com.example.gianni.sdpprototype.Fragments.OPOneOnOneFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingFragment;
 import com.example.gianni.sdpprototype.Fragments.BookingListFragment;
 import com.example.gianni.sdpprototype.Fragments.CheckAttendanceFragment;
@@ -115,6 +115,11 @@ public class MainActivity extends AppCompatActivity
 
         String serial = getHex(payload);
 
+        SharedPreferences prefs = getSharedPreferences("utshelps", MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putString("serial", serial );
+        edit.commit();
+
         Toast.makeText(getApplicationContext(), serial, Toast.LENGTH_SHORT).show();
         fragmentManager.beginTransaction().replace(R.id.content_frame, new CheckAttendanceFragment()).commit();
     }
@@ -145,7 +150,13 @@ public class MainActivity extends AppCompatActivity
                 ReplaceFragment(new AccountFragment());
                 break;
             case R.id.nav_other_drop:
-                ReplaceFragment(new AboutFragment());
+                ReplaceFragment(new OPDropInFragment());
+                break;
+            case R.id.nav_other_one:
+                ReplaceFragment(new OPOneOnOneFragment());
+                break;
+            case R.id.nav_other_daily:
+                ReplaceFragment(new OPDailyWrkFragment());
                 break;
             case R.id.nav_check_attendance:
                 ReplaceFragment(new CheckAttendanceFragment());

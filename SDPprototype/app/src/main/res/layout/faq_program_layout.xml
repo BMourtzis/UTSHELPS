@@ -30,7 +30,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_use"
@@ -70,7 +70,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_where"
@@ -110,7 +110,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_cost"
@@ -150,7 +150,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_assignment"
@@ -190,7 +190,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_c_assignment"
@@ -230,7 +230,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_h_assignment"
@@ -270,7 +270,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_grammar"
@@ -310,7 +310,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_pronunciation"
@@ -350,7 +350,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_helps_program_answer_presentation"

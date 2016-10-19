@@ -30,7 +30,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_exam_native_answer"
@@ -70,7 +70,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_exam_special_answer"
@@ -110,7 +110,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_exam_deadline_answer"
@@ -122,6 +122,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
+            android:textColorLink="@color/colorPrimary"
             android:textColor="@color/colorTextBlack"
             android:background="@color/colorAccent"
             android:layout_width="match_parent"
@@ -150,10 +151,10 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
-            android:text="@string/title_faq_exam_apply_question"
+            android:text="@string/title_faq_exam_apply_answer"
             android:textSize="15sp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -162,6 +163,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
+            android:textColorLink="@color/colorPrimary"
             android:textColor="@color/colorTextBlack"
             android:background="@color/colorAccent"
             android:layout_width="match_parent"

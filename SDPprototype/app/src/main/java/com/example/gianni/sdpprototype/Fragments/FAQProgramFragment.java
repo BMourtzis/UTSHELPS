@@ -24,7 +24,7 @@ public class FAQProgramFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FAQView = inflater.inflate(R.layout.faq_program_layout, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_faq_helps_program);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_faq_helps_program_no_tab);
 
         Button button1 = (Button) FAQView.findViewById(R.id.faq_q1_button);
         button1.setOnClickListener(new View.OnClickListener() {

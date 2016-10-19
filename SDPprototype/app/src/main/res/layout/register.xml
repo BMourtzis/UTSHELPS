@@ -1,11 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@drawable/landing_page_background"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin">
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp">
 
     <ScrollView
         android:id="@+id/registration_form"
@@ -16,7 +15,7 @@
             android:id="@+id/registration_form_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:paddingTop="10dp">
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_register_studentid"
@@ -58,14 +57,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/prompt_dob"
-                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/colorAccentHighlight"/>
 
 
             <EditText
                 android:id="@+id/register_day"
                 android:layout_below="@+id/register_text_dob"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_day"
                 android:textColorHint="@color/colorAccentHighlight"
@@ -77,7 +77,7 @@
                 android:id="@+id/register_month"
                 android:layout_below="@+id/register_text_dob"
                 android:layout_toRightOf="@+id/register_day"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_month"
                 android:textColorHint="@color/colorAccentHighlight"
@@ -89,7 +89,7 @@
                 android:id="@+id/register_year"
                 android:layout_below="@+id/register_text_dob"
                 android:layout_toRightOf="@+id/register_month"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_year"
                 android:textColorHint="@color/colorAccentHighlight"
@@ -104,35 +104,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/prompt_gender"
-                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/colorAccentHighlight"/>
 
             <RadioGroup
                 android:id="@+id/register_gender_radio"
                 android:layout_below="@+id/register_gender"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <RadioButton
                     android:text="@string/gender_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/register_gender_male"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccentHighlight"/>
 
                 <RadioButton
                     android:text="@string/gender_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/register_gender_female"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccentHighlight"/>
 
                 <RadioButton
                     android:text="@string/gender_other"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/register_gender_other"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccentHighlight"/>
             </RadioGroup>
 
             <TextView
@@ -141,28 +146,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/prompt_degree"
-                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/colorAccentHighlight"/>
 
             <RadioGroup
                 android:id="@+id/register_degree_radio"
                 android:layout_below="@+id/register_degree"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <RadioButton
                     android:text="@string/degree_undergraduate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/register_degree_under"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccentHighlight"/>
 
                 <RadioButton
                     android:text="@string/degree_postgraduate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/register_degree_post"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccentHighlight"/>
             </RadioGroup>
 
             <TextView
@@ -170,29 +179,34 @@
                 android:layout_below="@+id/register_degree_radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/prompt_degree"
-                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/prompt_status"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/colorAccentHighlight"/>
 
             <RadioGroup
                 android:id="@+id/register_status_radio"
                 android:layout_below="@+id/register_status"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <RadioButton
                     android:text="@string/status_international"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/register_status_int"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccentHighlight"/>
 
                 <RadioButton
                     android:text="@string/status_permanent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/register_status_perm"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccentHighlight"/>
             </RadioGroup>
 
             <android.support.design.widget.TextInputLayout
@@ -230,7 +244,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Create Account"
                 android:id="@+id/create_account_button"
@@ -241,9 +255,10 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
                 android:textColor="@color/colorTextBlack"
-                android:background="@drawable/button_design"
-                android:layout_gravity="center_horizontal"/>
+                android:background="@drawable/button_design" />
 
         </RelativeLayout>
     </ScrollView>

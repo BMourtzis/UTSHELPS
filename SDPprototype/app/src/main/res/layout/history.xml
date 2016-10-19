@@ -3,7 +3,23 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/booking_history_background">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/header_history_list"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/history_list_heading" />
+
     <ListView
+        android:layout_below="@+id/history_list_heading"
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></ListView>

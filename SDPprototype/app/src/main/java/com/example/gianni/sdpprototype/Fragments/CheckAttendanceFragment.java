@@ -1,6 +1,8 @@
 package com.example.gianni.sdpprototype.Fragments;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +28,12 @@ public class CheckAttendanceFragment extends Fragment {
         checkAttendance = inflater.inflate(R.layout.check_attendance, container, false);
         
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_check_attendance);
+
+        SharedPreferences sharedPrefs = this.getActivity().getSharedPreferences("utshelps", Context.MODE_PRIVATE);
+        String serial = sharedPrefs.getString("serial", "");
+
+        TextView serialText = (TextView) checkAttendance.findViewById(R.id.serial);
+        serialText.setText(serial);
 
         return checkAttendance;
     }

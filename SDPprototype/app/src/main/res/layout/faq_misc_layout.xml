@@ -30,7 +30,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_misc_what_answer"
@@ -70,7 +70,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_misc_consider_answer"
@@ -110,7 +110,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_misc_office_answer"
@@ -150,7 +150,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
             android:text="@string/title_faq_misc_team_answer"
@@ -162,6 +162,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
+            android:textColorLink="@color/colorPrimary"
             android:textColor="@color/colorTextBlack"
             android:background="@color/colorAccent"
             android:layout_width="match_parent"
@@ -190,24 +191,40 @@
             android:layout_height="1dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorTextBlack"/>
 
         <TextView
-            android:text="@string/title_faq_misc_help_answer"
+            android:text="@string/title_faq_misc_help_answer1"
             android:textSize="15sp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
+            android:textColorLink="@color/colorPrimary"
             android:textColor="@color/colorTextBlack"
             android:background="@color/colorAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            android:id="@+id/misc_q5_text"/>
+            android:id="@+id/misc_q5_text1"/>
+
+        <TextView
+            android:text="@string/title_faq_misc_help_answer2"
+            android:textSize="15sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColorLink="@color/colorPrimary"
+            android:textColor="@color/colorTextBlack"
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/misc_q5_text2"/>
 
     </LinearLayout>
 </ScrollView>

@@ -32,19 +32,20 @@
         <item
             android:id="@+id/nav_workshop_details"
             android:visible="false"
-            android:title="WorkshopDetails" />
+            android:title="@string/title_workshop_details" />
         <item
             android:id="@+id/nav_register"
             android:visible="false"
-            android:title="Register" />
+            android:title="@string/title_register" />
         <item
             android:id="@+id/nav_check_attendance"
             android:visible="false"
-            android:title="CheckAttendance" />
+            android:title="@string/title_check_attendance" />
     </group>
 
     <item android:title="@string/title_faq">
         <menu>
+            <group android:checkableBehavior="single" >
             <item
                 android:id="@+id/nav_faq_program"
                 android:title="@string/title_faq_helps_program" />
@@ -56,12 +57,13 @@
             <item
                 android:id="@+id/nav_faq_misc"
                 android:title="@string/title_faq_misc" />
-
+            </group>
         </menu>
     </item>
 
     <item android:title="@string/title_about">
         <menu>
+            <group android:checkableBehavior="single" >
             <item
                 android:id="@+id/nav_other_drop"
                 android:title="@string/title_other_drop_in" />
@@ -73,8 +75,7 @@
             <item
                 android:id="@+id/nav_other_daily"
                 android:title="@string/title_other_workshops" />
-
+            </group>
         </menu>
     </item>
-
 </menu>

@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ public class FAQExamsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FAQView = inflater.inflate(R.layout.faq_exams_layout, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_faq_exam);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.title_faq_exam_no_tab);
 
         Button button1 = (Button) FAQView.findViewById(R.id.exam_q1_button);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +58,12 @@ public class FAQExamsFragment extends Fragment {
                 text.setVisibility(text.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
             }
         });
+
+        TextView textLink1 = (TextView) FAQView.findViewById(R.id.exam_q3_text);
+        textLink1.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView textLink2 = (TextView) FAQView.findViewById(R.id.exam_q4_text);
+        textLink2.setMovementMethod(LinkMovementMethod.getInstance());
 
         return FAQView;
     }

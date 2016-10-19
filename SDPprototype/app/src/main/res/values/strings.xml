@@ -20,11 +20,19 @@
     <string name="title_button_cancel_booking">Cancel Booking</string>
     <string name="title_button_check_attendance">Record Attendance</string>
 
+    <!--Page Headers-->
+    <string name="header_booking_list">SELECT BOOKING FOR\nMORE DETAILS</string>
+    <string name="header_waiting_list">SELECT WAITING LIST WORKSHOP FOR MORE DETAILS</string>
+    <string name="header_history_list">PREVIOUSLY ATTENDED WORKSHOPS</string>
+
     <!--Navigation-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_login">Sign in</string>
     <string name="navigation_email_ending">\@student.uts.edu.au</string>
+
+    <!--Strings for FAQ Page-->
+    <string name="attendance_message">Your attendance has been recorded</string>
 
     <!--Registration-->
     <string name="preffered_name">Preferred Name</string>
@@ -33,10 +41,12 @@
     <string name="country_of_origin">Country of Origin</string>
 
     <!--Profile-->
-    <string name="student_id">Student ID: </string>
-    <string name="gender">Gender: </string>
-    <string name="degree">Degree: </string>
-    <string name="status">Status: </string>
+    <string name="student_id">Student ID</string>
+    <string name="gender">Gender</string>
+    <string name="degree">Degree</string>
+    <string name="status">Status</string>
+    <string name="edit_details">Edit Details</string>
+    <string name="logout">Logout</string>
 
     <!-- Strings related to login -->
     <string name="prompt_student_id">StudentID</string>
@@ -82,7 +92,8 @@
     <string name="prompt_search_topic">Topic</string>
 
     <!--Strings for FAQ Page-->
-    <string name="title_faq_helps_program">Helps Program</string>
+    <string name="title_faq_helps_program">\t\t\t\t\t\tHelps Program</string>
+    <string name="title_faq_helps_program_no_tab">Helps Program</string>
 
     <string name="title_faq_helps_program_question_use">Who can use HELPS?</string>
     <string name="title_faq_helps_program_question_where">Where is HELPS?</string>
@@ -116,7 +127,8 @@
         Yes. You can arrange a drop-in consultation or one-on-one consultation for us to help you out. For more information, go to ‘Other Programs’ in this app.
     </string>
 
-    <string name="title_faq_exam">Exam Special Conditions</string>
+    <string name="title_faq_exam">\t\t\t\t\t\tExam Special Conditions</string>
+    <string name="title_faq_exam_no_tab">Exam Special Conditions</string>
     <string name="title_faq_exam_native_question">I am not a native English speaker and I feel that I need more time in exams. Can you help?</string>
     <string name="title_faq_exam_special_question">I\'m a second/third year student. Can I get Special Conditions in my exams?</string>
     <string name="title_faq_exam_deadline_question">What is the deadline to apply for the Special Conditions?</string>
@@ -124,10 +136,11 @@
 
     <string name="title_faq_exam_native_answer">It depends. You might be eligible to apply for Special Conditions in Exams.</string>
     <string name="title_faq_exam_special_answer">No. Only first year (1st/2nd semester) students are eligible to apply.</string>
-    <string name="title_faq_exam_deadline_answer">The applications close on the Census date</string>
-    <string name="title_faq_exam_apply_answer">You would need to fill out an application form and submit it to the HELPS office (CB01.05.205). The application form and more can be found here.</string>
+    <string name="title_faq_exam_deadline_answer">The applications close on the <string name="census_link"><a href="http://www.uts.edu.au/current-students/managing-your-course/important-dates/census-date">Census date</a></string></string>
+    <string name="title_faq_exam_apply_answer">You would need to fill out an application form and submit it to the HELPS office (CB01.05.205). The application form and more can be found <string name="application_link"><a href="https://www.uts.edu.au/current-students/support/helps/special-conditions-exams-students-non-english-speaking-backgrounds">here</a></string>.</string>
 
-    <string name="title_faq_misc">Miscellaneous</string>
+    <string name="title_faq_misc">\t\t\t\t\t\tMiscellaneous</string>
+    <string name="title_faq_misc_no_tab">Miscellaneous</string>
     <string name="title_faq_misc_what_question">What is HELPS?</string>
     <string name="title_faq_misc_consider_question">Why should I consider using HELPS?</string>
     <string name="title_faq_misc_office_question">Where is your main office located?</string>
@@ -144,49 +157,52 @@
     <string name="title_faq_misc_office_answer">We are located on the Ultimo camps of UTS in Building 1, Level 5, Room 25 (CB01.05.205)</string>
     <string name="title_faq_misc_team_answer">
         UTS students, staff, alumni and community ca provide volunteer support for HELPS, ranging in roles from Peer Advisors, Conversation Leaders, to being part of a Buddy Program.
-        The application form and ore information can be found here.
+        The application form and ore information can be found <string name="misc_link"><a href="http://www.uts.edu.au/current-students/support/helps/helps-uconnect-volunteer-programs">here</a></string>.
     </string>
-    <string name="title_faq_misc_help_answer">
-        You can either visit out HELPS Office(CB01.05.205), email us at HELPS@uts.edu.au, or send a message through out Facebook page and ask us anything.
-    </string>
-    
-    <string name="title_other_drop_in">Drop-in Consultations</string>
-    <string name="title_other_drop_in_text">
-        We offer 15-minute drop-on advice sessions and 40-minute one-to-one consultations by referral to help you with your assignment writing and preparation.
-        Drop-in consultations are held at:
-        2016 Spring Semester (Not offered on Public Holidays)
-        HELPS office (CB01.05.25)
-        Monday to Thursday: 12noon - 6pm / Friday: 12noon - 5pm
-        UTS Blake Library (Research helpdesk)
-        Monday to Thursday: 4pm - 7pm / Saturday: 1pm - 4pm
-        Building 10 Foyer (Pod 1)
-        Monday to Thursday: 10am - 1pm
-        At the initial stage of your assignment writing or preparation process, you are strongly encouraged to come and see HELPS. The best time to see us is when you first receive your assignment.
-        HELPS Advisors can help edit your assignment WITH you, not FOR you - helping you to edit for:
-        Structure and argument – that your writing is logically organised with well-developed and well-supported arguments.
-        Style and expression – that your choice of vocabulary is appropriate, sentences are well constructed, ideas are clearly introduced, and paragraphs are fully developed.
-        Grammar – that your issues are identified and explained so you can learn from your mistakes and avoid making them in the future.
-        Proof reading is the final step in the editing process, with the aim of producing an error-free assignment. It is your responsibility to check for mistakes in spelling, punctuation, typing and formatting in your assignment before you submit it to your lecturer.
-        For more information, go to this website.
+    <string name="title_faq_misc_help_answer1">
+        You can either visit out HELPS Office(CB01.05.205), email us at <string name="helps_email_link"><a href="mailto:HELPS@uts.edu.au">HELPS@uts.edu.au</a></string>, or send a message through
     </string>
 
-    <string name="title_other_one">One-on-one Consultations</string>
-    <string name="title_other_one_text">
-        After you have attended a drop-in advice session; if a longer consultation is required, you may be able to book in for a 40-minute one-to-one consultation.
-        Having a one-to-one consultation is an opportunity for an in-depth discussion in relation to your specific need on an assessment.
-        One-on-one consultations can commonly consist of:
-        Discussing your draft to ensure that you have addressed the assessment criteria
-        Addressing a number of grammar or referencing issues that require assistance
-        Preparing for an oral presentation.
-        For more information, go to this website.
+    <string name="title_faq_misc_help_answer2">
+        out <string name="facebook_link"><a href="https://www.facebook.com/pg/UTSHELPS/about/?entry_point=page_nav_about_item&amp;ref=page_internal">Facebook</a></string> page and ask us anything.
     </string>
 
-    <string name="title_other_workshops">Daily Workshops</string>
+    <!--Strings for Drop-in Consultations Page-->
+    <string name="title_other_drop_in">\t\t\t\t\t\tDrop-in Consultations</string>
+    <string name="title_other_drop_in_no_tab">Drop-in Consultations</string>
+    <string name="title_other_drop_in_text1">
+        We offer 15-minute drop-on advice sessions and 40-minute one-to-one consultations by referral to help you with your assignment writing and preparation.\n\nDrop-in consultations are held at:\n\n2016 Spring Semester (Not offered on Public Holidays)
+    </string>
+    <string name="title_other_drop_in_text2">
+        &#9658; HELPS office (CB01.05.25)\nMonday to Thursday: 12noon - 6pm / Friday: 12noon - 5pm\n\n
+        &#9658; UTS Blake Library (Research helpdesk)\nMonday to Thursday: 4pm - 7pm / Saturday: 1pm - 4pm\n\n
+        &#9658; Building 10 Foyer (Pod 1)\nMonday to Thursday: 10am - 1pm
+    </string>
+    <string name="title_other_drop_in_text3">
+        At the initial stage of your assignment writing or preparation process, you are strongly encouraged to come and see HELPS. The best time to see us is when you first receive your assignment.\n\nHELPS Advisors can help edit your assignment WITH you, not FOR you - helping you to edit for:
+    </string>
+    <string name="title_other_drop_in_text4">
+        &#9658; Structure and argument – that your writing is logically organised with well-developed and well-supported arguments.\n\n
+        &#9658; Style and expression – that your choice of vocabulary is appropriate, sentences are well constructed, ideas are clearly introduced, and paragraphs are fully developed.\n\n
+        &#9658; Grammar – that your issues are identified and explained so you can learn from your mistakes and avoid making them in the future.
+    </string>
+    <string name="title_other_drop_in_text5">Proof reading is the final step in the editing process, with the aim of producing an error-free assignment. It is your responsibility to check for mistakes in spelling, punctuation, typing and formatting in your assignment before you submit it to your lecturer.\n\nFor more information, go to <string name="my_link"><a href="https://www.uts.edu.au/current-students/support/helps/assignment-writing-assistance">this</a></string> website.</string>
+
+    <!--Strings for One-on-one Consultations Page-->
+    <string name="title_other_one">\t\t\t\t\t\tOne-on-one Consultations</string>
+    <string name="title_other_one_no_tab">One-on-one Consultations</string>
+    <string name="title_other_one_text1">
+        After you have attended a drop-in advice session; if a longer consultation is required, you may be able to book in for a 40-minute one-to-one consultation.\nHaving a one-to-one consultation is an opportunity for an in-depth discussion in relation to your specific need on an assessment.\n\nOne-on-one consultations can commonly consist of:
+    </string>
+    <string name="title_other_one_text2">
+        &#9658; Discussing your draft to ensure that you have addressed the assessment criteria\n\n&#9658; Addressing a number of grammar or referencing issues that require assistance\n\n&#9658; Preparing for an oral presentation.
+    </string>
+    <string name="title_other_one_text3">For more information, go to <string name="one_on_one_link"><a href="https://www.uts.edu.au/current-students/support/helps/assignment-writing-assistance/one-one-consultation-referral">this</a></string> website.</string>
+
+    <!--Strings for Daily Workshops Page-->
+    <string name="title_other_workshops">\t\t\t\t\t\tDaily Workshops</string>
+    <string name="title_other_workshops_no_tab">Daily Workshops</string>
     <string name="title_other_workshops_text">
-        Students are required to book for upcoming daily workshops, as places are limited. You can book these workshops via this app.
-        You can cancel your workshop by pressing on you booking workshop under \'Home\', and press \'Cancel Booking\'./n/n
-        If bookings are no longer available, student can reserve a spot on the Waiting List as places may become available as it gets closer to the workshop time.
-        You will not be penalised if you so not cancel your Waiting List reservation after the workshop time./n/n
-        Failing to turn up for your registered workshops are not fair to those on the waiting lists. Repeat offenders may be barred from attending workshops for the rest of the semester.
+        Students are required to book for upcoming daily workshops, as places are limited. You can book these workshops via this app.\n\nYou can cancel your workshop by pressing on you booking workshop under \'Home\', and press \'Cancel Booking\'.\n\nIf bookings are no longer available, student can reserve a spot on the Waiting List as places may become available as it gets closer to the workshop time.\n\nYou will not be penalised if you so not cancel your Waiting List reservation after the workshop time.\n\nFailing to turn up for your registered workshops are not fair to those on the waiting lists. Repeat offenders may be barred from attending workshops for the rest of the semester.
     </string>
 </resources>

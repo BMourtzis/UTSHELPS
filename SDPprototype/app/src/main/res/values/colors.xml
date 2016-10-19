@@ -5,6 +5,6 @@
     <color name="colorAccent">#BFffffff</color>
     <color name="colorTextBlack">#BF060606</color>
     <color name="colorAccentHighlight">#ffffffff</color>
-    <color name="colorOpaqueButtonBackground">#BF893c7d</color>
-    <color name="colorOpaqueTextBackground">#BF893c7d</color>
+    <color name="colorOpaqueBtnBackground">#BF893c7d</color>
+    <color name="colorLogoutBtnBackground">#bfff0c04</color>
 </resources>
