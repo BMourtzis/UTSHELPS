@@ -97,7 +97,7 @@
             android:paddingBottom="10dp"
             android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/button_design"
+            android:background="@drawable/button_design_logout"
             android:textColor="@color/colorTextBlack"
             android:id="@+id/booking_cancel_button" />
 

@@ -39,7 +39,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorTextBlack"/>
 
     <TextView
         android:text="'Understanding Turnitin' starts at 2pm today"
@@ -86,7 +86,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorTextBlack"/>
 
     <TextView
         android:text="'Presentation Skills' starts at 11am today"
@@ -107,7 +107,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorTextBlack"/>
 
     <TextView
         android:text="'Presentation Skills' starts at 11am today"
@@ -154,7 +154,7 @@
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorTextBlack"/>
 
     <TextView
         android:text="'Presentation Skills' starts at 11am today"

@@ -98,6 +98,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
+                android:layout_marginStart="290dp"
                 android:id="@+id/account_gender_value"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -138,6 +139,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
+                android:layout_marginStart="292dp"
                 android:id="@+id/account_degree_value"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -178,6 +180,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
+                android:layout_marginStart="200dp"
                 android:id="@+id/account_status_value"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
